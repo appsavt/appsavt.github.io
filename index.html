@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfiles</title>
+<style>
+:root{--fons:#F4F5F7;--sup:#FFFFFF;--text:#12161C;--sec:#5A6270;--accent:#1D5FA8;--suau:#EAF1FA;--vora:#E2E5EA}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fons:#0E1116;--sup:#171B22;--text:#E8EBF0;--sec:#9AA3B2;--accent:#6FA6E8;--suau:#1B2A3D;--vora:#2A303A}}
+:root[data-theme="dark"]{--fons:#0E1116;--sup:#171B22;--text:#E8EBF0;--sec:#9AA3B2;--accent:#6FA6E8;--suau:#1B2A3D;--vora:#2A303A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fons);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:30px;line-height:1.2;margin:0 0 6px}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--sec);margin:28px 0 8px}
+p{margin:0}
+a{color:var(--accent)}
+.card{background:var(--sup);border:1px solid var(--vora);border-radius:16px;padding:20px}
+.meta{color:var(--sec);font-size:14px;margin-bottom:20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+nav a{padding:6px 12px;border-radius:999px;background:var(--suau);text-decoration:none;font-size:14px;font-weight:600}
+nav a[aria-current="true"]{background:var(--accent);color:#fff}
+section.llengua{margin-bottom:48px}
+.js section.llengua{display:none}
+.js section.llengua.activa{display:block}
+.peu{color:var(--sec);font-size:13px;margin-top:32px}
+.boto{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<main>
+<h1>Perfiles</h1>
+<p class="meta">Alviltol</p>
+<div class="card">
+<p>Pesos, dimensions i termes de secció de perfils d'acer, i càlcul de bigues.<br>
+<span style="color:var(--sec)">Weights, dimensions and section properties of steel profiles, plus beam sizing.</span></p>
+<a class="boto" href="https://apps.apple.com/app/id567765832">App Store</a>
+</div>
+<p class="peu"><a href="privacitat.html">Política de privacitat · Privacy policy</a></p>
+</main>
+</body>
+</html>
