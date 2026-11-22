@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArmaTec</title>
+<meta name="description" content="ArmaTec: prontuari de formigó armat per a Android. Barres d'acer, àrees i separacions, recobriments i ancoratges segons el Código Estructural, i calculadores.">
+<style>
+:root{--fons:#F4F5F7;--sup:#FFFFFF;--text:#12161C;--sec:#5A6270;--accent:#1D5FA8;--suau:#EAF1FA;--vora:#E2E5EA}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fons:#0E1116;--sup:#171B22;--text:#E8EBF0;--sec:#9AA3B2;--accent:#6FA6E8;--suau:#1B2A3D;--vora:#2A303A}}
+:root[data-theme="dark"]{--fons:#0E1116;--sup:#171B22;--text:#E8EBF0;--sec:#9AA3B2;--accent:#6FA6E8;--suau:#1B2A3D;--vora:#2A303A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fons);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:30px;line-height:1.2;margin:0 0 6px}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--sec);margin:32px 0 10px}
+p{margin:0 0 10px}
+p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 10px;padding-left:22px}
+li{margin:3px 0}
+a{color:var(--accent)}
+.card{background:var(--sup);border:1px solid var(--vora);border-radius:16px;padding:20px;margin-bottom:12px}
+.meta{color:var(--sec);font-size:14px;margin-bottom:20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+nav a{padding:6px 12px;border-radius:999px;background:var(--suau);text-decoration:none;font-size:14px;font-weight:600}
+nav a[aria-current="true"]{background:var(--accent);color:#fff}
+section.llengua{margin-bottom:48px}
+.js section.llengua{display:none}
+.js section.llengua.activa{display:block}
+.peu{color:var(--sec);font-size:13px;margin-top:32px}
+.boto{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px;margin-top:8px}
+.exemple{background:var(--suau);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:15px}
+.exemple b:first-child{display:block;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.xifres{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:10px}
+.xifres div{background:var(--sup);border:1px solid var(--vora);border-radius:10px;padding:8px 10px}
+.xifres small{display:block;color:var(--sec);font-size:12px}
+.xifres span{font-weight:700;font-variant-numeric:tabular-nums}
+.etq{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--suau);border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px;text-transform:none;letter-spacing:0}
+.cap{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.cap img{border-radius:16px;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.cap .meta{margin:0}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--sec);text-align:center;margin-top:4px}
+img{max-width:100%;height:auto}
+.families{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:4px 0 14px}
+.families img{display:block;margin:0 auto}
+.dibuix{background:#fff;border-radius:10px;padding:6px;display:block}
+.fitxa{display:grid;grid-template-columns:minmax(0,150px) 1fr;gap:12px;align-items:center;margin-top:10px}
+.fitxa .xifres{margin-top:0}
+.solis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 14px}
+@media (max-width:420px){.fitxa{grid-template-columns:1fr}.fitxa .dibuix{max-width:160px;margin:0 auto}}
+.sub{font-weight:700;margin:16px 0 6px;color:var(--text)}
+table.dades{width:100%;border-collapse:collapse;background:var(--sup);border-radius:10px;overflow:hidden;font-size:14px}
+table.dades td,table.dades th{padding:6px 10px;border-top:1px solid var(--vora);text-align:left;vertical-align:top}
+table.dades tr.grup th{background:var(--fons);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--sec)}
+table.dades tr:first-child th,table.dades tr:first-child td{border-top:0}
+table.dades .sim{font-weight:700;white-space:nowrap;width:2.5em}
+table.dades .val{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
+table.entrada .val{white-space:normal}
+ol.proces{background:var(--sup);border-radius:10px;padding:10px 12px 10px 32px;font-size:14px;margin:0}
+.xifres .destacat{background:var(--accent);border-color:var(--accent)}
+.xifres .destacat small,.xifres .destacat span{color:var(--sup)}
+.figdiag{background:var(--sup);border-radius:10px;padding:12px;margin-top:12px}
+svg.diag{display:block;width:100%;height:auto;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+svg.diag text{fill:var(--text)}
+svg.diag .eti{fill:var(--sec);font-size:13px;font-weight:700;letter-spacing:.04em}
+svg.diag .sec{fill:var(--sec);font-size:13px}
+svg.diag .idx{font-size:11px}
+svg.diag .acc-t{fill:var(--accent);font-weight:600}
+svg.diag .acc{stroke:var(--accent);stroke-width:2}
+svg.diag .acc-f{fill:var(--accent)}
+svg.diag .biga{fill:var(--text)}
+svg.diag .sup{fill:none;stroke:var(--text);stroke-width:2}
+svg.diag .rea{stroke:#C2410C;stroke-width:3}
+svg.diag .rea-f{fill:#C2410C}
+svg.diag .mom{fill:var(--accent);fill-opacity:.18;stroke:var(--accent);stroke-width:2}
+svg.diag .base{stroke:var(--text);stroke-width:2}
+svg.diag .guia{stroke:var(--sec);stroke-width:1;stroke-dasharray:4 4}
+svg.diag .def{fill:none;stroke:var(--accent);stroke-width:3}
+.nota{font-size:14px;color:var(--sec);margin-top:10px}
+.enrere{margin:0 0 16px;font-size:14px}.enrere a{text-decoration:none;font-weight:600}
+.peu a{white-space:nowrap}
+svg.diag .form{fill:var(--suau);stroke:var(--sec);stroke-width:1.5}
+svg.diag .estrep{fill:none;stroke:var(--text);stroke-width:2.5}
+svg.diag .barra{fill:var(--text)}
+svg.diag .barra2{fill:var(--accent)}
+svg.diag .tou{fill:var(--accent);fill-opacity:.35}
+svg.diag.gran text{font-size:22px}
+svg.diag.gran .eti{font-size:17px}
+svg.diag.gran .sec{font-size:19px}
+svg.diag.gran .idx{font-size:15px}
+</style>
+</head>
+<body>
+<main>
+<p class="enrere"><a href="../">← Apps</a></p>
+<nav><a href="#ca" hreflang="ca">Català</a><a href="#es" hreflang="es">Español</a><a href="#en" hreflang="en">English</a></nav>
+
+<!-- ===================== CA ===================== -->
+<section class="llengua" id="ca" lang="ca">
+<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Icona d'ArmaTec"><div><h1>ArmaTec</h1><p class="meta">Android</p></div></header>
+<div class="card">
+<p>Prontuari de formigó armat a la butxaca: catàleg de barres d'acer, àrees i separacions, recobriments i ancoratges segons el Código Estructural, i calculadores per a l'obra. Cada resultat mostra la fórmula, les dades i la referència normativa (article, taula i pàgina del BOE).</p>
+<a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Descarrega-la a Google Play</a>
+</div>
+
+<h2>Barres d'acer</h2>
+<div class="card">
+<p>Taula de tots els diàmetres (Ø6 a Ø40) amb àrea, perímetre, pes per metre i pes de barres de 6 i 12 m, i una fitxa per a cada diàmetre amb les fórmules.</p>
+<div class="exemple"><b>Exemple</b>Barra Ø12:
+<div class="xifres"><div><small>Àrea</small><span>113,10 mm²</span></div><div><small>Perímetre</small><span>37,70 mm</span></div><div><small>Pes</small><span>0,888 kg/m</span></div><div><small>Barra de 12 m</small><span>10,65 kg</span></div></div>
+<p class="nota">Valors teòrics calculats amb una densitat de 7.850 kg/m³ (CTE DB SE-A, 4.2).</p></div>
+</div>
+
+<h2>Àrees i separacions</h2>
+<div class="card">
+<p>Taula de doble entrada diàmetre × separació (5 a 35 cm) amb l'àrea d'acer per metre d'amplada i les barres per metre. Toques una cel·la i en veus el detall.</p>
+<div class="exemple"><b>Exemple</b>Ø12 cada 15 cm:
+<div class="xifres"><div class="destacat"><small>Àrea per metre</small><span>7,54 cm²/m</span></div><div><small>Barres per metre</small><span>6,67</span></div></div>
+<p class="nota">As = A / s = 113,10 / 15 = 7,54 cm²/m</p></div>
+</div>
+
+<h2>Recobriments</h2>
+<div class="card">
+<p>Tries la classe d'exposició (X0, XC, XD, XS) i, si cal, gel/desgel (XF), atac químic (XA) i erosió (XM); el tipus de formigó, la resistència, la vida útil (50 o 100 anys), el ciment i el control d'execució. L'app dona el <b>recobriment mínim</b>, el <b>marge Δc<sub>dev</sub></b> i el <b>recobriment nominal</b>, amb el criteri que governa i la taula d'origen ressaltada.</p>
+<div class="exemple"><b>Exemple</b>Pilar exterior amb gelades
+<p class="sub">Dades introduïdes</p><table class="dades entrada"><tr><td>Classes d'exposició</td><td class="val">XC4 + XF1</td></tr><tr><td>Formigó</td><td class="val">Armat · 25 ≤ fck &lt; 40 N/mm²</td></tr><tr><td>Vida útil</td><td class="val">50 anys</td></tr><tr><td>Ciment</td><td class="val">CEM I (XC4) · CEM III (XF1)</td></tr><tr><td>Control d'execució</td><td class="val">In situ, nivell intens · Δc<sub>dev</sub> = 5 mm</td></tr></table>
+<p class="sub">Resultats</p>
+<div class="xifres"><div><small>c<sub>min</sub></small><span>25 mm</span><small>governa XF1 · taula 44.3</small></div><div><small>Δc<sub>dev</sub></small><span>5 mm</span></div><div class="destacat"><small>c<sub>nom</sub></small><span>30 mm</span></div></div>
+<figure class="figdiag"><svg class="diag gran" viewBox="0 0 640 260" role="img" aria-label="Esquema del recobriment: distància de la barra a la cara del formigó i composició del recobriment nominal.">
+<text class="eti" x="8" y="20">SECCIÓ</text>
+<rect class="form" x="40" y="34" width="280" height="196" rx="6"/>
+<rect class="estrep" x="72" y="66" width="216" height="132" rx="10"/>
+<circle class="barra" cx="106" cy="166" r="19"/><circle class="barra" cx="254" cy="166" r="19"/>
+<line class="acc" x1="180" y1="198" x2="180" y2="230"/><line class="acc" x1="170" y1="198" x2="190" y2="198"/><line class="acc" x1="170" y1="230" x2="190" y2="230"/>
+<text class="acc-t" x="196" y="222">c<tspan class="idx" dy="4">nom</tspan><tspan dy="-4"> = 30 mm</tspan></text>
+<text class="eti" x="360" y="22">c<tspan class="idx" dy="3">nom</tspan><tspan dy="-3"> = c</tspan><tspan class="idx" dy="3">min</tspan><tspan dy="-3"> + Δc</tspan><tspan class="idx" dy="3">dev</tspan></text>
+<rect class="acc-f" x="360" y="70" width="200" height="34" rx="4"/><rect class="tou" x="560" y="70" width="40" height="34" rx="4"/>
+<text x="360" y="62">c<tspan class="idx" dy="4">min</tspan><tspan dy="-4"> = 25 mm</tspan></text><text x="600" y="62" text-anchor="end">Δc<tspan class="idx" dy="4">dev</tspan><tspan dy="-4"> = 5</tspan></text>
+<line class="base" x1="360" y1="124" x2="600" y2="124"/><line class="base" x1="360" y1="118" x2="360" y2="130"/><line class="base" x1="600" y1="118" x2="600" y2="130"/>
+<text class="acc-t" x="480" y="152" text-anchor="middle">c<tspan class="idx" dy="4">nom</tspan><tspan dy="-4"> = 30 mm</tspan></text>
+<text class="sec" x="480" y="182" text-anchor="middle">XC4: 20 mm · XF1: 25 mm</text>
+</svg></figure>
+<p class="nota">El recobriment nominal és la mida dels separadors. Amb diverses classes es pren el valor més exigent.</p></div>
+</div>
+
+<h2>Ancoratges i solapaments</h2>
+<div class="card">
+<p>Longitud bàsica d'ancoratge, longitud neta i longitud de solapament segons l'apartat 49.5 del Código Estructural: diàmetre, acer, resistència, posició I o II, tracció o compressió, tipus d'ancoratge, aprofitament, efectes dinàmics, grups de barres i percentatge solapat. Aplica el text corregit pel BOE de 2024 («≮», no menor que).</p>
+<div class="exemple"><b>Exemple</b>Barra Ø16, B 500 S, fck 25, posició I, prolongació recta, 50 % solapat
+<ol class="proces"><li>m · Ø² = 1,5 · 16² = 384 mm</li><li>f<sub>yk</sub> · Ø / 20 = 500 · 16 / 20 = 400 mm → l<sub>b</sub> = 400 mm</li><li>l<sub>b,neta</sub> = l<sub>b</sub> · β · A<sub>s</sub>/A<sub>s,real</sub> = 400 mm (mínim 160 mm)</li><li>l<sub>s</sub> = α · l<sub>b,neta</sub> = 1,8 · 400 = 720 mm</li></ol>
+<div class="xifres"><div><small>l<sub>b</sub></small><span>400 mm</span></div><div><small>Ancoratge</small><span>400 mm</span></div><div class="destacat"><small>Solapament l<sub>s</sub></small><span>720 mm</span></div></div>
+<figure class="figdiag"><svg class="diag gran" viewBox="0 0 640 165" role="img" aria-label="Esquema d'un solapament: dues barres una al costat de l'altra al llarg de la longitud de solapament.">
+<text class="eti" x="8" y="20">SOLAPAMENT</text>
+<rect class="barra" x="40" y="62" width="380" height="14" rx="7"/>
+<rect class="barra2" x="220" y="82" width="380" height="14" rx="7"/>
+<line class="guia" x1="227" y1="40" x2="227" y2="110"/><line class="guia" x1="413" y1="40" x2="413" y2="110"/>
+<line class="acc" x1="227" y1="122" x2="413" y2="122"/><line class="acc" x1="227" y1="114" x2="227" y2="130"/><line class="acc" x1="413" y1="114" x2="413" y2="130"/>
+<text class="acc-t" x="320" y="156" text-anchor="middle">l<tspan class="idx" dy="4">s</tspan><tspan dy="-4"> = 720 mm</tspan></text>
+<text class="sec" x="320" y="48" text-anchor="middle">Ø16 · ≤ 4Ø</text>
+</svg></figure></div>
+</div>
+
+<h2>Calculadores</h2>
+<div class="card">
+<ul><li><b>Àrea d'acer total</b> de n barres.</li><li><b>Equivalència de barres</b>: quantes barres d'un altre diàmetre igualen o superen l'àrea.</li><li><b>Àrea per metre</b> per a qualsevol separació.</li><li><b>Pes d'armadures</b> per línies de barres, amb resum per diàmetre.</li><li><b>Nombre de barres i separació</b> en una amplada, amb la comprovació de la distància lliure mínima (art. 49.4.1).</li></ul>
+<div class="exemple"><b>Exemple</b>Biga de 30 cm, c<sub>nom</sub> = 30 mm, estrep Ø8, barres Ø16 cada 10 cm com a màxim:
+<div class="xifres"><div class="destacat"><small>Barres</small><span>4 Ø16</span></div><div><small>Separació lliure</small><span>53,3 mm ✅</span></div><div><small>Mínim</small><span>25,0 mm</span></div></div></div>
+</div>
+
+<h2>Taules oficials, cercador i PDF</h2>
+<div class="card">
+<p>Les taules del Código Estructural es poden consultar tal com figuren al BOE, amb la fila del resultat ressaltada. El cercador troba diàmetres (Ø12), classes (XC3), taules (44.3) i conceptes (solapament, separadors…). Cada càlcul es pot <b>exportar en PDF</b> amb les dades, les fórmules i les referències, per desar-lo o compartir-lo.</p>
+</div>
+
+<h2>Normativa</h2>
+<div class="card">
+<ul><li>Código Estructural, Real Decreto 470/2021 (BOE-A-2021-13681), amb la correcció d'errors BOE-A-2024-1989.</li><li>CTE DB SE-A Seguridad estructural: Acero.</li></ul><p>Tots els valors s'han transcrit dels textos oficials. ArmaTec és una eina de consulta: no substitueix un programa de càlcul estructural ni constitueix una verificació estructural completa.</p>
+</div>
+
+<h2>Gratuïta i compres</h2>
+<div class="card">
+<p>L'app és gratuïta, amb un bàner de publicitat, i totes les funcions estan disponibles sense comprar res. Amb una <b>compra única</b> es treuen els anuncis; la compra es restaura sola en qualsevol dispositiu amb el mateix compte de Google Play.</p><p>Funciona sense connexió. Disponible en català, castellà i anglès.</p>
+</div>
+
+<p class="peu"><a href="privacitat.html#ca">Política de privacitat</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+</section>
+
+<!-- ===================== ES ===================== -->
+<section class="llengua" id="es" lang="es">
+<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Icono de ArmaTec"><div><h1>ArmaTec</h1><p class="meta">Android</p></div></header>
+<div class="card">
+<p>Un prontuario de hormigón armado en el bolsillo: catálogo de barras de acero, áreas y separaciones, recubrimientos y anclajes según el Código Estructural, y calculadoras para la obra. Cada resultado muestra la fórmula, los datos y la referencia normativa (artículo, tabla y página del BOE).</p>
+<a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Descárgala en Google Play</a>
+</div>
+
+<h2>Barras de acero</h2>
+<div class="card">
+<p>Tabla de todos los diámetros (Ø6 a Ø40) con área, perímetro, peso por metro y peso de barras de 6 y 12 m, y una ficha para cada diámetro con las fórmulas.</p>
+<div class="exemple"><b>Ejemplo</b>Barra Ø12:
+<div class="xifres"><div><small>Área</small><span>113,10 mm²</span></div><div><small>Perímetro</small><span>37,70 mm</span></div><div><small>Peso</small><span>0,888 kg/m</span></div><div><small>Barra de 12 m</small><span>10,65 kg</span></div></div>
+<p class="nota">Valores teóricos calculados con una densidad de 7.850 kg/m³ (CTE DB SE-A, 4.2).</p></div>
+</div>
+
+<h2>Áreas y separaciones</h2>
+<div class="card">
+<p>Tabla de doble entrada diámetro × separación (5 a 35 cm) con el área de acero por metro de ancho y las barras por metro. Tocas una celda y ves su detalle.</p>
+<div class="exemple"><b>Ejemplo</b>Ø12 cada 15 cm:
+<div class="xifres"><div class="destacat"><small>Área por metro</small><span>7,54 cm²/m</span></div><div><small>Barras por metro</small><span>6,67</span></div></div>
+<p class="nota">As = A / s = 113,10 / 15 = 7,54 cm²/m</p></div>
+</div>
+
+<h2>Recubrimientos</h2>
+<div class="card">
+<p>Eliges la clase de exposición (X0, XC, XD, XS) y, si hace falta, hielo/deshielo (XF), ataque químico (XA) y erosión (XM); el tipo de hormigón, la resistencia, la vida útil (50 o 100 años), el cemento y el control de ejecución. La app da el <b>recubrimiento mínimo</b>, el <b>margen Δc<sub>dev</sub></b> y el <b>recubrimiento nominal</b>, con el criterio determinante y la tabla de origen resaltada.</p>
+<div class="exemple"><b>Ejemplo</b>Pilar exterior con heladas
+<p class="sub">Datos introducidos</p><table class="dades entrada"><tr><td>Clases de exposición</td><td class="val">XC4 + XF1</td></tr><tr><td>Hormigón</td><td class="val">Armado · 25 ≤ fck &lt; 40 N/mm²</td></tr><tr><td>Vida útil</td><td class="val">50 años</td></tr><tr><td>Cemento</td><td class="val">CEM I (XC4) · CEM III (XF1)</td></tr><tr><td>Control de ejecución</td><td class="val">In situ, nivel intenso · Δc<sub>dev</sub> = 5 mm</td></tr></table>
+<p class="sub">Resultados</p>
+<div class="xifres"><div><small>c<sub>min</sub></small><span>25 mm</span><small>determina XF1 · tabla 44.3</small></div><div><small>Δc<sub>dev</sub></small><span>5 mm</span></div><div class="destacat"><small>c<sub>nom</sub></small><span>30 mm</span></div></div>
+<figure class="figdiag"><svg class="diag gran" viewBox="0 0 640 260" role="img" aria-label="Esquema del recubrimiento: distancia de la barra a la cara del hormigón y composición del recubrimiento nominal.">
+<text class="eti" x="8" y="20">SECCIÓN</text>
+<rect class="form" x="40" y="34" width="280" height="196" rx="6"/>
+<rect class="estrep" x="72" y="66" width="216" height="132" rx="10"/>
+<circle class="barra" cx="106" cy="166" r="19"/><circle class="barra" cx="254" cy="166" r="19"/>
+<line class="acc" x1="180" y1="198" x2="180" y2="230"/><line class="acc" x1="170" y1="198" x2="190" y2="198"/><line class="acc" x1="170" y1="230" x2="190" y2="230"/>
+<text class="acc-t" x="196" y="222">c<tspan class="idx" dy="4">nom</tspan><tspan dy="-4"> = 30 mm</tspan></text>
+<text class="eti" x="360" y="22">c<tspan class="idx" dy="3">nom</tspan><tspan dy="-3"> = c</tspan><tspan class="idx" dy="3">min</tspan><tspan dy="-3"> + Δc</tspan><tspan class="idx" dy="3">dev</tspan></text>
+<rect class="acc-f" x="360" y="70" width="200" height="34" rx="4"/><rect class="tou" x="560" y="70" width="40" height="34" rx="4"/>
+<text x="360" y="62">c<tspan class="idx" dy="4">min</tspan><tspan dy="-4"> = 25 mm</tspan></text><text x="600" y="62" text-anchor="end">Δc<tspan class="idx" dy="4">dev</tspan><tspan dy="-4"> = 5</tspan></text>
+<line class="base" x1="360" y1="124" x2="600" y2="124"/><line class="base" x1="360" y1="118" x2="360" y2="130"/><line class="base" x1="600" y1="118" x2="600" y2="130"/>
+<text class="acc-t" x="480" y="152" text-anchor="middle">c<tspan class="idx" dy="4">nom</tspan><tspan dy="-4"> = 30 mm</tspan></text>
+<text class="sec" x="480" y="182" text-anchor="middle">XC4: 20 mm · XF1: 25 mm</text>
+</svg></figure>
+<p class="nota">El recubrimiento nominal es el tamaño de los separadores. Con varias clases se toma el valor más exigente.</p></div>
+</div>
+
+<h2>Anclajes y solapos</h2>
+<div class="card">
+<p>Longitud básica de anclaje, longitud neta y longitud de solapo según el apartado 49.5 del Código Estructural: diámetro, acero, resistencia, posición I o II, tracción o compresión, tipo de anclaje, aprovechamiento, efectos dinámicos, grupos de barras y porcentaje solapado. Aplica el texto corregido por el BOE de 2024 («≮», no menor que).</p>
+<div class="exemple"><b>Ejemplo</b>Barra Ø16, B 500 S, fck 25, posición I, prolongación recta, 50 % solapado
+<ol class="proces"><li>m · Ø² = 1,5 · 16² = 384 mm</li><li>f<sub>yk</sub> · Ø / 20 = 500 · 16 / 20 = 400 mm → l<sub>b</sub> = 400 mm</li><li>l<sub>b,neta</sub> = l<sub>b</sub> · β · A<sub>s</sub>/A<sub>s,real</sub> = 400 mm (mínimo 160 mm)</li><li>l<sub>s</sub> = α · l<sub>b,neta</sub> = 1,8 · 400 = 720 mm</li></ol>
+<div class="xifres"><div><small>l<sub>b</sub></small><span>400 mm</span></div><div><small>Anclaje</small><span>400 mm</span></div><div class="destacat"><small>Solapo l<sub>s</sub></small><span>720 mm</span></div></div>
+<figure class="figdiag"><svg class="diag gran" viewBox="0 0 640 165" role="img" aria-label="Esquema de un solapo: dos barras una al lado de la otra a lo largo de la longitud de solapo.">
+<text class="eti" x="8" y="20">SOLAPO</text>
+<rect class="barra" x="40" y="62" width="380" height="14" rx="7"/>
+<rect class="barra2" x="220" y="82" width="380" height="14" rx="7"/>
+<line class="guia" x1="227" y1="40" x2="227" y2="110"/><line class="guia" x1="413" y1="40" x2="413" y2="110"/>
+<line class="acc" x1="227" y1="122" x2="413" y2="122"/><line class="acc" x1="227" y1="114" x2="227" y2="130"/><line class="acc" x1="413" y1="114" x2="413" y2="130"/>
+<text class="acc-t" x="320" y="156" text-anchor="middle">l<tspan class="idx" dy="4">s</tspan><tspan dy="-4"> = 720 mm</tspan></text>
+<text class="sec" x="320" y="48" text-anchor="middle">Ø16 · ≤ 4Ø</text>
+</svg></figure></div>
+</div>
+
+<h2>Calculadoras</h2>
+<div class="card">
+<ul><li><b>Área de acero total</b> de n barras.</li><li><b>Equivalencia de barras</b>: cuántas barras de otro diámetro igualan o superan el área.</li><li><b>Área por metro</b> para cualquier separación.</li><li><b>Peso de armaduras</b> por líneas de barras, con resumen por diámetro.</li><li><b>Número de barras y separación</b> en un ancho, con la comprobación de la distancia libre mínima (art. 49.4.1).</li></ul>
+<div class="exemple"><b>Ejemplo</b>Viga de 30 cm, c<sub>nom</sub> = 30 mm, cerco Ø8, barras Ø16 cada 10 cm como máximo:
+<div class="xifres"><div class="destacat"><small>Barras</small><span>4 Ø16</span></div><div><small>Separación libre</small><span>53,3 mm ✅</span></div><div><small>Mínimo</small><span>25,0 mm</span></div></div></div>
+</div>
+
+<h2>Tablas oficiales, buscador y PDF</h2>
+<div class="card">
+<p>Las tablas del Código Estructural se pueden consultar tal como figuran en el BOE, con la fila del resultado resaltada. El buscador encuentra diámetros (Ø12), clases (XC3), tablas (44.3) y conceptos (solapo, separadores…). Cada cálculo se puede <b>exportar en PDF</b> con los datos, las fórmulas y las referencias, para guardarlo o compartirlo.</p>
+</div>
+
+<h2>Normativa</h2>
+<div class="card">
+<ul><li>Código Estructural, Real Decreto 470/2021 (BOE-A-2021-13681), con la corrección de errores BOE-A-2024-1989.</li><li>CTE DB SE-A Seguridad estructural: Acero.</li></ul><p>Todos los valores se han transcrito de los textos oficiales. ArmaTec es una herramienta de consulta: no sustituye a un programa de cálculo estructural ni constituye una verificación estructural completa.</p>
+</div>
+
+<h2>Gratis y compras</h2>
+<div class="card">
+<p>La app es gratuita, con un banner de publicidad, y todas las funciones están disponibles sin comprar nada. Con una <b>compra única</b> se quitan los anuncios; la compra se restaura sola en cualquier dispositivo con la misma cuenta de Google Play.</p><p>Funciona sin conexión. Disponible en catalán, castellano e inglés.</p>
+</div>
+
+<p class="peu"><a href="privacitat.html#es">Política de privacidad</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+</section>
+
+<!-- ===================== EN ===================== -->
+<section class="llengua" id="en" lang="en">
+<header class="cap"><img src="img/icona.png" width="72" height="72" alt="ArmaTec icon"><div><h1>ArmaTec</h1><p class="meta">Android</p></div></header>
+<div class="card">
+<p>A reinforced concrete handbook in your pocket: steel rebar catalogue, areas and spacing, concrete cover and anchorage according to the Spanish Structural Code (Código Estructural), and calculators for site work. Every result shows the formula, the input data and the code reference (article, table and BOE page).</p>
+<a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Get it on Google Play</a>
+</div>
+
+<h2>Steel rebars</h2>
+<div class="card">
+<p>A table of all diameters (Ø6 to Ø40) with area, perimeter, mass per metre and weight of 6 and 12 m bars, plus a sheet for each diameter with the formulas.</p>
+<div class="exemple"><b>Example</b>Ø12 bar:
+<div class="xifres"><div><small>Area</small><span>113.10 mm²</span></div><div><small>Perimeter</small><span>37.70 mm</span></div><div><small>Mass</small><span>0.888 kg/m</span></div><div><small>12 m bar</small><span>10.65 kg</span></div></div>
+<p class="nota">Theoretical values calculated with a density of 7,850 kg/m³ (CTE DB SE-A, 4.2).</p></div>
+</div>
+
+<h2>Areas and spacing</h2>
+<div class="card">
+<p>A double-entry table diameter × spacing (5 to 35 cm) with the steel area per metre width and the bars per metre. Tap a cell to see its details.</p>
+<div class="exemple"><b>Example</b>Ø12 at 15 cm:
+<div class="xifres"><div class="destacat"><small>Area per metre</small><span>7.54 cm²/m</span></div><div><small>Bars per metre</small><span>6.67</span></div></div>
+<p class="nota">As = A / s = 113.10 / 15 = 7.54 cm²/m</p></div>
+</div>
+
+<h2>Concrete cover</h2>
+<div class="card">
+<p>Choose the exposure class (X0, XC, XD, XS) and, if needed, freeze/thaw (XF), chemical attack (XA) and erosion (XM); the concrete type, strength, design working life (50 or 100 years), cement and execution control. The app gives the <b>minimum cover</b>, the <b>allowance Δc<sub>dev</sub></b> and the <b>nominal cover</b>, with the governing criterion and the source table highlighted.</p>
+<div class="exemple"><b>Example</b>External column exposed to frost
+<p class="sub">Input data</p><table class="dades entrada"><tr><td>Exposure classes</td><td class="val">XC4 + XF1</td></tr><tr><td>Concrete</td><td class="val">Reinforced · 25 ≤ fck &lt; 40 N/mm²</td></tr><tr><td>Working life</td><td class="val">50 years</td></tr><tr><td>Cement</td><td class="val">CEM I (XC4) · CEM III (XF1)</td></tr><tr><td>Execution control</td><td class="val">Cast in situ, intense level · Δc<sub>dev</sub> = 5 mm</td></tr></table>
+<p class="sub">Results</p>
+<div class="xifres"><div><small>c<sub>min</sub></small><span>25 mm</span><small>XF1 governs · table 44.3</small></div><div><small>Δc<sub>dev</sub></small><span>5 mm</span></div><div class="destacat"><small>c<sub>nom</sub></small><span>30 mm</span></div></div>
+<figure class="figdiag"><svg class="diag gran" viewBox="0 0 640 260" role="img" aria-label="Cover diagram: distance from the bar to the concrete face and make-up of the nominal cover.">
+<text class="eti" x="8" y="20">SECTION</text>
+<rect class="form" x="40" y="34" width="280" height="196" rx="6"/>
+<rect class="estrep" x="72" y="66" width="216" height="132" rx="10"/>
+<circle class="barra" cx="106" cy="166" r="19"/><circle class="barra" cx="254" cy="166" r="19"/>
+<line class="acc" x1="180" y1="198" x2="180" y2="230"/><line class="acc" x1="170" y1="198" x2="190" y2="198"/><line class="acc" x1="170" y1="230" x2="190" y2="230"/>
+<text class="acc-t" x="196" y="222">c<tspan class="idx" dy="4">nom</tspan><tspan dy="-4"> = 30 mm</tspan></text>
+<text class="eti" x="360" y="22">c<tspan class="idx" dy="3">nom</tspan><tspan dy="-3"> = c</tspan><tspan class="idx" dy="3">min</tspan><tspan dy="-3"> + Δc</tspan><tspan class="idx" dy="3">dev</tspan></text>
+<rect class="acc-f" x="360" y="70" width="200" height="34" rx="4"/><rect class="tou" x="560" y="70" width="40" height="34" rx="4"/>
+<text x="360" y="62">c<tspan class="idx" dy="4">min</tspan><tspan dy="-4"> = 25 mm</tspan></text><text x="600" y="62" text-anchor="end">Δc<tspan class="idx" dy="4">dev</tspan><tspan dy="-4"> = 5</tspan></text>
+<line class="base" x1="360" y1="124" x2="600" y2="124"/><line class="base" x1="360" y1="118" x2="360" y2="130"/><line class="base" x1="600" y1="118" x2="600" y2="130"/>
+<text class="acc-t" x="480" y="152" text-anchor="middle">c<tspan class="idx" dy="4">nom</tspan><tspan dy="-4"> = 30 mm</tspan></text>
+<text class="sec" x="480" y="182" text-anchor="middle">XC4: 20 mm · XF1: 25 mm</text>
+</svg></figure>
+<p class="nota">The nominal cover is the spacer size. With several classes, the most demanding value is used.</p></div>
+</div>
+
+<h2>Anchorage and laps</h2>
+<div class="card">
+<p>Basic anchorage length, net anchorage length and lap length according to section 49.5 of the Spanish Structural Code: diameter, steel, strength, position I or II, tension or compression, anchorage type, utilisation, dynamic effects, bundled bars and lapped percentage. It applies the text as corrected in the 2024 BOE (“≮”, not less than).</p>
+<div class="exemple"><b>Example</b>Ø16 bar, B 500 S, fck 25, position I, straight, 50 % lapped
+<ol class="proces"><li>m · Ø² = 1.5 · 16² = 384 mm</li><li>f<sub>yk</sub> · Ø / 20 = 500 · 16 / 20 = 400 mm → l<sub>b</sub> = 400 mm</li><li>l<sub>b,net</sub> = l<sub>b</sub> · β · A<sub>s</sub>/A<sub>s,prov</sub> = 400 mm (minimum 160 mm)</li><li>l<sub>s</sub> = α · l<sub>b,net</sub> = 1.8 · 400 = 720 mm</li></ol>
+<div class="xifres"><div><small>l<sub>b</sub></small><span>400 mm</span></div><div><small>Anchorage</small><span>400 mm</span></div><div class="destacat"><small>Lap l<sub>s</sub></small><span>720 mm</span></div></div>
+<figure class="figdiag"><svg class="diag gran" viewBox="0 0 640 165" role="img" aria-label="Lap diagram: two bars side by side along the lap length.">
+<text class="eti" x="8" y="20">LAP</text>
+<rect class="barra" x="40" y="62" width="380" height="14" rx="7"/>
+<rect class="barra2" x="220" y="82" width="380" height="14" rx="7"/>
+<line class="guia" x1="227" y1="40" x2="227" y2="110"/><line class="guia" x1="413" y1="40" x2="413" y2="110"/>
+<line class="acc" x1="227" y1="122" x2="413" y2="122"/><line class="acc" x1="227" y1="114" x2="227" y2="130"/><line class="acc" x1="413" y1="114" x2="413" y2="130"/>
+<text class="acc-t" x="320" y="156" text-anchor="middle">l<tspan class="idx" dy="4">s</tspan><tspan dy="-4"> = 720 mm</tspan></text>
+<text class="sec" x="320" y="48" text-anchor="middle">Ø16 · ≤ 4Ø</text>
+</svg></figure></div>
+</div>
+
+<h2>Calculators</h2>
+<div class="card">
+<ul><li><b>Total steel area</b> of n bars.</li><li><b>Bar equivalence</b>: how many bars of another diameter match or exceed the area.</li><li><b>Area per metre</b> for any spacing.</li><li><b>Reinforcement weight</b> by bar lines, with a summary by diameter.</li><li><b>Number of bars and spacing</b> within a width, with the minimum clear spacing check (art. 49.4.1).</li></ul>
+<div class="exemple"><b>Example</b>30 cm beam, c<sub>nom</sub> = 30 mm, Ø8 links, Ø16 bars at no more than 10 cm:
+<div class="xifres"><div class="destacat"><small>Bars</small><span>4 Ø16</span></div><div><small>Clear spacing</small><span>53.3 mm ✅</span></div><div><small>Minimum</small><span>25.0 mm</span></div></div></div>
+</div>
+
+<h2>Official tables, search and PDF</h2>
+<div class="card">
+<p>The tables of the Spanish Structural Code can be viewed as published in the BOE, with the result row highlighted. Search finds diameters (Ø12), classes (XC3), tables (44.3) and concepts (lap, spacers…). Every calculation can be <b>exported to PDF</b> with the data, formulas and references, to save or share it.</p>
+</div>
+
+<h2>Codes</h2>
+<div class="card">
+<ul><li>Spanish Structural Code (Código Estructural), Royal Decree 470/2021 (BOE-A-2021-13681), with the correction of errors BOE-A-2024-1989.</li><li>CTE DB SE-A Structural safety: Steel.</li></ul><p>All values have been transcribed from the official texts. ArmaTec is a reference tool: it does not replace structural design software and is not a complete structural verification.</p>
+</div>
+
+<h2>Free and purchases</h2>
+<div class="card">
+<p>The app is free, with a banner ad, and every feature is available without buying anything. A <b>one-time purchase</b> removes the ads; it is restored automatically on any device with the same Google Play account.</p><p>Works offline. Available in Catalan, Spanish and English.</p>
+</div>
+
+<p class="peu"><a href="privacitat.html#en">Privacy policy</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+</section>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var llengues=["ca", "es", "en"], enllac=document.querySelectorAll('nav a');
+  function mostra(l){
+    llengues.forEach(function(x){var s=document.getElementById(x); if(s) s.classList.toggle('activa', x===l);});
+    enllac.forEach(function(a){a.setAttribute('aria-current', a.getAttribute('href')==='#'+l ? 'true':'false');});
+    document.documentElement.lang=l;
+  }
+  var h=location.hash.slice(1), n=(navigator.language||'en').slice(0,2);
+  mostra(llengues.indexOf(h)>=0 ? h : (llengues.indexOf(n)>=0 ? n : 'en'));
+  enllac.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault(); var l=a.getAttribute('href').slice(1); history.replaceState(null,'','#'+l); mostra(l);});});
+})();
+</script>
+</main>
+</body>
+</html>

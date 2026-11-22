@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Perfiles</title>
-<meta name="description" content="Perfiles: pesos, dimensions i termes de secció de perfils d'acer europeus i americans, i dimensionador de bigues.">
+<title>Apps</title>
+<meta name="description" content="Aplicacions: Perfiles (perfils d'acer, iPhone i iPad) i ArmaTec (formigó armat, Android).">
 <style>
 :root{--fons:#F4F5F7;--sup:#FFFFFF;--text:#12161C;--sec:#5A6270;--accent:#1D5FA8;--suau:#EAF1FA;--vora:#E2E5EA}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fons:#0E1116;--sup:#171B22;--text:#E8EBF0;--sec:#9AA3B2;--accent:#6FA6E8;--suau:#1B2A3D;--vora:#2A303A}}
@@ -13,13 +13,10 @@
 body{margin:0;background:var(--fons);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
 main{max-width:720px;margin:0 auto;padding:32px 16px 48px}
 h1{font-size:30px;line-height:1.2;margin:0 0 6px}
-h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--sec);margin:32px 0 10px}
-p{margin:0 0 10px}
-p:last-child{margin-bottom:0}
-ul,ol{margin:0 0 10px;padding-left:22px}
-li{margin:3px 0}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--sec);margin:28px 0 8px}
+p{margin:0}
 a{color:var(--accent)}
-.card{background:var(--sup);border:1px solid var(--vora);border-radius:16px;padding:20px;margin-bottom:12px}
+.card{background:var(--sup);border:1px solid var(--vora);border-radius:16px;padding:20px}
 .meta{color:var(--sec);font-size:14px;margin-bottom:20px}
 nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
 nav a{padding:6px 12px;border-radius:999px;background:var(--suau);text-decoration:none;font-size:14px;font-weight:600}
@@ -28,462 +25,124 @@ section.llengua{margin-bottom:48px}
 .js section.llengua{display:none}
 .js section.llengua.activa{display:block}
 .peu{color:var(--sec);font-size:13px;margin-top:32px}
-.boto{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px;margin-top:8px}
-.exemple{background:var(--suau);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:15px}
-.exemple b:first-child{display:block;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
-.xifres{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:10px}
-.xifres div{background:var(--sup);border:1px solid var(--vora);border-radius:10px;padding:8px 10px}
-.xifres small{display:block;color:var(--sec);font-size:12px}
-.xifres span{font-weight:700;font-variant-numeric:tabular-nums}
-.etq{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--suau);border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:2px;text-transform:none;letter-spacing:0}
-.cap{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.cap img{border-radius:16px;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.15)}
-.cap .meta{margin:0}
-figure{margin:0}
-figcaption{font-size:13px;color:var(--sec);text-align:center;margin-top:4px}
-img{max-width:100%;height:auto}
-.families{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:4px 0 14px}
-.families img{display:block;margin:0 auto}
-.dibuix{background:#fff;border-radius:10px;padding:6px;display:block}
-.fitxa{display:grid;grid-template-columns:minmax(0,150px) 1fr;gap:12px;align-items:center;margin-top:10px}
-.fitxa .xifres{margin-top:0}
-.solis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 14px}
-@media (max-width:420px){.fitxa{grid-template-columns:1fr}.fitxa .dibuix{max-width:160px;margin:0 auto}}
-.sub{font-weight:700;margin:16px 0 6px;color:var(--text)}
-table.dades{width:100%;border-collapse:collapse;background:var(--sup);border-radius:10px;overflow:hidden;font-size:14px}
-table.dades td,table.dades th{padding:6px 10px;border-top:1px solid var(--vora);text-align:left;vertical-align:top}
-table.dades tr.grup th{background:var(--fons);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--sec)}
-table.dades tr:first-child th,table.dades tr:first-child td{border-top:0}
-table.dades .sim{font-weight:700;white-space:nowrap;width:2.5em}
-table.dades .val{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
-table.entrada .val{white-space:normal}
-ol.proces{background:var(--sup);border-radius:10px;padding:10px 12px 10px 32px;font-size:14px;margin:0}
-.xifres .destacat{background:var(--accent);border-color:var(--accent)}
-.xifres .destacat small,.xifres .destacat span{color:var(--sup)}
-.figdiag{background:var(--sup);border-radius:10px;padding:12px;margin-top:12px}
-svg.diag{display:block;width:100%;height:auto;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
-svg.diag text{fill:var(--text)}
-svg.diag .eti{fill:var(--sec);font-size:13px;font-weight:700;letter-spacing:.04em}
-svg.diag .sec{fill:var(--sec);font-size:13px}
-svg.diag .idx{font-size:11px}
-svg.diag .acc-t{fill:var(--accent);font-weight:600}
-svg.diag .acc{stroke:var(--accent);stroke-width:2}
-svg.diag .acc-f{fill:var(--accent)}
-svg.diag .biga{fill:var(--text)}
-svg.diag .sup{fill:none;stroke:var(--text);stroke-width:2}
-svg.diag .rea{stroke:#C2410C;stroke-width:3}
-svg.diag .rea-f{fill:#C2410C}
-svg.diag .mom{fill:var(--accent);fill-opacity:.18;stroke:var(--accent);stroke-width:2}
-svg.diag .base{stroke:var(--text);stroke-width:2}
-svg.diag .guia{stroke:var(--sec);stroke-width:1;stroke-dasharray:4 4}
-svg.diag .def{fill:none;stroke:var(--accent);stroke-width:3}
-.nota{font-size:14px;color:var(--sec);margin-top:10px}
+.boto{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px;margin-top:20px}
+.enrere{margin:0 0 16px;font-size:14px}.enrere a{text-decoration:none;font-weight:600}
+.apps{display:grid;gap:12px}
+.app{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:start}
+.app img{border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.app h3{margin:0;font-size:22px}
+.app .meta{margin:0 0 8px}
+.app p{margin:0 0 10px}
+.enllacos{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:12px}
+.enllacos .boto{margin-top:0}
+.intro{color:var(--sec);margin:0 0 20px}
+@media (max-width:420px){.app{grid-template-columns:56px 1fr;gap:12px}.app img{width:56px;height:56px}}
 </style>
 </head>
 <body>
 <main>
 <nav><a href="#ca" hreflang="ca">Català</a><a href="#es" hreflang="es">Español</a><a href="#en" hreflang="en">English</a><a href="#fr" hreflang="fr">Français</a><a href="#de" hreflang="de">Deutsch</a><a href="#it" hreflang="it">Italiano</a></nav>
-
-<!-- ===================== CATALÀ ===================== -->
 <section class="llengua" id="ca" lang="ca">
-<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Icona de Perfiles"><div><h1>Perfiles</h1><p class="meta">Alviltol · iPhone i iPad</p></div></header>
-<div class="card">
-<p>Prontuari de perfils d'acer a la butxaca: pesos, dimensions i termes de secció de perfils europeus i americans, i un dimensionador de bigues que et proposa el perfil adequat per a una càrrega i una llum donades.</p>
-<a class="boto" href="https://apps.apple.com/app/id567765832">Descarrega-la a l'App Store</a>
+<h1>Apps</h1>
+<p class="intro">Aplicacions tècniques per a enginyeria i construcció.</p>
+<div class="apps">
+<div class="card app"><img src="perfiles/img/icona.png" width="72" height="72" alt="Perfiles"><div>
+<h3>Perfiles</h3><p class="meta">iPhone i iPad</p>
+<p>Prontuari de perfils d'acer: pesos, dimensions i termes de secció de perfils europeus i americans, i dimensionador de bigues.</p>
+<div class="enllacos"><a class="boto" href="https://apps.apple.com/app/id567765832">Descarrega-la a l'App Store</a><a href="perfiles/#ca">Més informació</a><a href="perfiles/privacitat.html#ca">Privacitat</a></div>
+</div></div>
+<div class="card app"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"><div>
+<h3>ArmaTec</h3><p class="meta">Android</p>
+<p>Prontuari de formigó armat: barres d'acer, àrees i separacions, recobriments i ancoratges segons el Código Estructural, i calculadores per a l'obra.</p>
+<div class="enllacos"><a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Descarrega-la a Google Play</a><a href="armatec/#ca">Més informació</a><a href="armatec/privacitat.html#ca">Privacitat</a></div>
+</div></div>
 </div>
-
-<h2>Catàleg de perfils</h2>
-<div class="card">
-<p>Tria la regió (Europa o EUA) i navega per tres famílies:</p>
-<div class="families"><figure><img src="img/estructurals.png" width="300" height="225" alt="" loading="lazy"><figcaption>Estructurals</figcaption></figure><figure><img src="img/comercials.png" width="300" height="225" alt="" loading="lazy"><figcaption>Comercials</figcaption></figure><figure><img src="img/tubulars.png" width="300" height="225" alt="" loading="lazy"><figcaption>Tubulars</figcaption></figure></div>
-<ul>
-<li><b>Estructurals</b> — Europa: HEA, HEB, HEM, IPE, IPN, UPN. EUA: W, S, M, HP, C, MC.</li>
-<li><b>Comercials</b> — angulars L i LD, T, pletines, rodons, quadrats i rectangulars massissos; als EUA també WT, MT i ST.</li>
-<li><b>Tubulars</b> — tub rodó, quadrat, rectangular i oval; als EUA, HSS rodó i rectangular i PIPE.</li>
-</ul>
-<p>Amb el cercador trobes un perfil escrivint-ne el nom (per exemple «HEB 2» et mostra HEB 200, HEB 220…).</p>
-</div>
-
-<h2>Fitxa del perfil</h2>
-<div class="card">
-<p>Cada perfil té una fitxa amb el dibuix acotat i totes les dades agrupades:</p>
-<ul>
-<li><b>Pes</b> per metre (calculat amb una densitat de 7.850 kg/m³).</li>
-<li><b>Dimensions</b>: alçada, base, gruixos d'ànima i ala, radis…</li>
-<li><b>Termes de secció</b>: àrea, moment estàtic, moments d'inèrcia, mòduls resistents, radis de gir i mòdul de torsió.</li>
-<li><b>Posició del centre</b> de gravetat en perfils asimètrics (L, T, UPN…).</li>
-<li><b>Forats</b>: distància entre eixos de forats i diàmetre màxim del forat a les ales.</li>
-</ul>
-<p>Pots veure els valors en <b>sistema mètric</b> o <b>imperial</b> (polzades, lliures) i <b>exportar la fitxa en PDF o imatge</b> per compartir-la o arxivar-la.</p>
-<div class="exemple"><b>Exemple</b>Obres Estructurals → HEB → HEB 200 i en tens les dades clau d'un cop d'ull:
-<div class="fitxa"><img class="dibuix" src="img/heb.png" width="260" height="304" alt="Dibuix acotat d'un perfil HEB" loading="lazy"><div class="xifres"><div><small>Pes</small><span>61,3 kg/m</span></div><div><small>h × b</small><span>200 × 200 mm</span></div><div><small>Àrea</small><span>78,1 cm²</span></div><div><small>I<sub>x</sub></small><span>5.696 cm⁴</span></div><div><small>W<sub>x</sub></small><span>570 cm³</span></div></div></div><p class="sub">La fitxa completa, tal com la mostra l'app:</p><table class="dades"><tr class="grup"><th colspan="3">Dimensions</th></tr><tr><td class="sim">h</td><td>Altura</td><td class="val">200 mm</td></tr><tr><td class="sim">b</td><td>Base</td><td class="val">200 mm</td></tr><tr><td class="sim">e</td><td>Espessor ànima</td><td class="val">9 mm</td></tr><tr><td class="sim">e<sub>1</sub></td><td>Espessor ala</td><td class="val">15 mm</td></tr><tr><td class="sim">r</td><td>Radi de la curva interior</td><td class="val">18 mm</td></tr><tr><td class="sim">h<sub>1</sub></td><td>Alçada de la part plana de l'ànima</td><td class="val">134 mm</td></tr><tr class="grup"><th colspan="3">Pes i secció</th></tr><tr><td class="sim">P</td><td>Pes per metre</td><td class="val">61,3 kg/m</td></tr><tr><td class="sim">A</td><td>Àrea de la secció</td><td class="val">78,1 cm²</td></tr><tr><td class="sim">u</td><td>Perímetre de la secció</td><td class="val">1.150 mm</td></tr><tr class="grup"><th colspan="3">Termes de secció</th></tr><tr><td class="sim">I<sub>x</sub></td><td>Moment d'inèrcia de la secció respecte a l'eix X</td><td class="val">5.696 cm⁴</td></tr><tr><td class="sim">W<sub>x</sub></td><td>Mòdul resistent de la secció respecte a l'eix X</td><td class="val">570 cm³</td></tr><tr><td class="sim">S<sub>x</sub></td><td>Moment estàtic de mitja secció respecte a l'eix X</td><td class="val">321 cm³</td></tr><tr><td class="sim">i<sub>x</sub></td><td>Radi de gir de la secció respecte a l'eix X</td><td class="val">8,54 cm</td></tr><tr><td class="sim">I<sub>y</sub></td><td>Moment d'inèrcia de la secció respecte a l'eix Y</td><td class="val">2.003 cm⁴</td></tr><tr><td class="sim">W<sub>y</sub></td><td>Mòdul resistent de la secció respecte a l'eix Y</td><td class="val">200 cm³</td></tr><tr><td class="sim">i<sub>y</sub></td><td>Radi de gir de la secció respecte a l'eix Y</td><td class="val">5,07 cm</td></tr><tr><td class="sim">I<sub>t</sub></td><td>Mòdul de torsió de la secció</td><td class="val">63,4 cm⁴</td></tr><tr><td class="sim">I<sub>a</sub></td><td>Mòdul de curvatura de la secció</td><td class="val">171.100 cm⁶</td></tr><tr class="grup"><th colspan="3">Forats</th></tr><tr><td class="sim">w</td><td>Distància entre eixos de forats</td><td class="val">110 mm</td></tr><tr><td class="sim">w<sub>1</sub></td><td>Distància eix forat a l'extrem</td><td class="val">45 mm</td></tr><tr><td class="sim">a</td><td>Diàmetre del forat</td><td class="val">25 mm</td></tr></table></div>
-</div>
-
-<h2>Dimensionador de bigues</h2>
-<div class="card">
-<p>A la pestanya de càlcul, l'app busca el primer perfil de la sèrie triada que compleix tensió i fletxa. En tres passos:</p>
-<ol>
-<li><b>Tipus de perfil</b>: HEB, IPE, IPN… o W, S, M, HP als EUA.</li>
-<li><b>Solicitació</b>: recolzada–recolzada, encastada–recolzada, encastada–encastada o voladís.</li>
-<li><b>Càrregues</b>: puntual centrada, puntual descentrada, repartida en tota la longitud o repartida en un tram (16 casos en total).</li>
-</ol>
-<div class="solis"><figure><img class="dibuix" src="img/Solis0-RecRecQR.png" width="428" height="236" alt="Esquema de biga: Recolzada–recolzada" loading="lazy"><figcaption>Recolzada–recolzada</figcaption></figure><figure><img class="dibuix" src="img/Solis1-EmpRec1FC.png" width="428" height="236" alt="Esquema de biga: Encastada–recolzada" loading="lazy"><figcaption>Encastada–recolzada</figcaption></figure><figure><img class="dibuix" src="img/Solis2-EmpEmp1FNC.png" width="428" height="236" alt="Esquema de biga: Encastada–encastada" loading="lazy"><figcaption>Encastada–encastada</figcaption></figure><figure><img class="dibuix" src="img/Solis3-Vol1FExtrem.png" width="428" height="236" alt="Esquema de biga: Voladís" loading="lazy"><figcaption>Voladís</figcaption></figure></div>
-<p>Al botó de característiques de càlcul configures el <b>tipus d'acer</b> (S235, S275, S355… o A36, A572, A992…), el <b>coeficient de majoració</b> de càrregues, la <b>fletxa admissible</b> (de L/250 a L/500 segons l'ús), si vols tenir en compte el <b>pes propi</b> i, en perfils americans, una <b>amplada mínima</b> de base.</p>
-<p>El resultat mostra el <b>perfil proposat</b>, les <b>reaccions</b> i els <b>moments</b> als recolzaments, el moment màxim, la <b>fletxa màxima</b> i on es produeix, i el pes de la biga. Pots exportar-lo en PDF o imatge.</p>
-<div class="exemple"><b>Exemple de càlcul</b>Quin IPE cal per a una biga de 5 m recolzada als dos extrems que ha d'aguantar una càrrega repartida de 1.000 kg/m?<p class="sub">Dades introduïdes</p><table class="dades entrada"><tr><td>Solicitació</td><td class="val">Recolzada–recolzada, càrrega repartida</td></tr><tr><td>Càrrega q</td><td class="val">1.000 kg/m</td></tr><tr><td>Longitud L</td><td class="val">5 m</td></tr><tr><td>Tipus d'acer</td><td class="val">S275JR · 275 N/mm² = 2.804 kg/cm²</td></tr><tr><td>Coef. majoració</td><td class="val">1,50</td></tr><tr><td>Fletxa màxima</td><td class="val">L/400 = 1,25 cm</td></tr><tr><td>Pes propi</td><td class="val">Sí</td></tr></table><p class="sub">Procés de càlcul <span class="etq">Pro</span></p><ol class="proces"><li>Moment de les càrregues: M = q·L²/8 = 3.125 kg·m; majorat ×1,50 = 4.687,5 kg·m.</li><li>Predimensionat: W<sub>x</sub> ≥ M / σ<sub>adm</sub> = 468.750 / 2.804 = 167,2 cm³ ⇒ IPE 200 (W<sub>x</sub> = 194 cm³).</li><li>Tensions amb el pes propi: σ = 2.452 &lt; 2.804 kg/cm² ✅ · tallant τ = 427 &lt; 1.619 kg/cm² ✅</li><li>Fletxa: IPE 200 → 2,04 cm ❌ · IPE 220 → 1,44 cm ❌ · IPE 240 → 1,03 cm ✅</li></ol><p class="sub">Resultats</p><div class="xifres res"><div class=destacat><small>Perfil calculat</small><span>IPE 240</span></div><div><small>Reacció en A</small><span>3.827 kg</span></div><div><small>Reacció en B</small><span>3.827 kg</span></div><div><small>Moment màxim</small><span>4.783 kg·m</span><small>x = 2,50 m</small></div><div><small>Moment en A i B</small><span>0</span></div><div><small>Fletxa màxima</small><span>1,03 cm</span><small>x = 2,50 m</small></div><div><small>Pes perfil</small><span>30,7 kg/m</span><small>5 m → 153,5 kg</small></div><div><small>Tensió màxima</small><span>1.476 kg/cm²</span><small>&lt; 2.804 kg/cm²</small></div></div><figure class="figdiag"><svg class="diag" viewBox="0 0 640 430" role="img" aria-label="Representació dels resultats: càrregues i reaccions, diagrama de moments flectors i deformada (exagerada)."><text class="eti" x="8" y="20">Càrregues i reaccions</text><text class="acc-t" x="550" y="44" text-anchor="end">q = 1.000 kg/m</text><line class="acc" x1="90" y1="56" x2="550" y2="56"/><line class="acc" x1="90.0" y1="56" x2="90.0" y2="76"/><polygon class="acc-f" points="86.0,74 94.0,74 90.0,82"/><line class="acc" x1="128.3" y1="56" x2="128.3" y2="76"/><polygon class="acc-f" points="124.3,74 132.3,74 128.3,82"/><line class="acc" x1="166.7" y1="56" x2="166.7" y2="76"/><polygon class="acc-f" points="162.7,74 170.7,74 166.7,82"/><line class="acc" x1="205.0" y1="56" x2="205.0" y2="76"/><polygon class="acc-f" points="201.0,74 209.0,74 205.0,82"/><line class="acc" x1="243.3" y1="56" x2="243.3" y2="76"/><polygon class="acc-f" points="239.3,74 247.3,74 243.3,82"/><line class="acc" x1="281.7" y1="56" x2="281.7" y2="76"/><polygon class="acc-f" points="277.7,74 285.7,74 281.7,82"/><line class="acc" x1="320.0" y1="56" x2="320.0" y2="76"/><polygon class="acc-f" points="316.0,74 324.0,74 320.0,82"/><line class="acc" x1="358.3" y1="56" x2="358.3" y2="76"/><polygon class="acc-f" points="354.3,74 362.3,74 358.3,82"/><line class="acc" x1="396.7" y1="56" x2="396.7" y2="76"/><polygon class="acc-f" points="392.7,74 400.7,74 396.7,82"/><line class="acc" x1="435.0" y1="56" x2="435.0" y2="76"/><polygon class="acc-f" points="431.0,74 439.0,74 435.0,82"/><line class="acc" x1="473.3" y1="56" x2="473.3" y2="76"/><polygon class="acc-f" points="469.3,74 477.3,74 473.3,82"/><line class="acc" x1="511.7" y1="56" x2="511.7" y2="76"/><polygon class="acc-f" points="507.7,74 515.7,74 511.7,82"/><line class="acc" x1="550.0" y1="56" x2="550.0" y2="76"/><polygon class="acc-f" points="546.0,74 554.0,74 550.0,82"/><rect class="biga" x="90" y="84" width="460" height="10" rx="2"/><polygon class="sup" points="90,94 78,114 102,114"/><line class="rea" x1="90" y1="158" x2="90" y2="124"/><polygon class="rea-f" points="84,128 96,128 90,118"/><polygon class="sup" points="550,94 538,114 562,114"/><line class="rea" x1="550" y1="158" x2="550" y2="124"/><polygon class="rea-f" points="544,128 556,128 550,118"/><text x="104" y="152">R<tspan class="idx" dy="4">A</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text x="536" y="152" text-anchor="end">R<tspan class="idx" dy="4">B</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text class="sec" x="320.0" y="122" text-anchor="middle">L = 5 m · IPE 240</text><text class="eti" x="8" y="190">Moments flectors</text><path class="mom" d="M90,205 Q320.0,355 550,205 Z"/><line class="base" x1="90" y1="205" x2="550" y2="205"/><line class="guia" x1="320.0" y1="205" x2="320.0" y2="280"/><text x="320.0" y="305" text-anchor="middle">M<tspan class="idx" dy="4">max</tspan><tspan dy="-4"> = 4.783 kg·m</tspan></text><text class="eti" x="8" y="330">Deformada</text><line class="guia" x1="90" y1="350" x2="550" y2="350"/><path class="def" d="M90,350 C240,402 400,402 550,350"/><polygon class="sup" points="90,350 81,365 99,365"/><polygon class="sup" points="550,350 541,365 559,365"/><line class="acc" x1="320.0" y1="350" x2="320.0" y2="389"/><text x="320.0" y="418" text-anchor="middle">f = 1,03 cm  (x = 2,50 m)  ≤ 1,25 cm</text></svg><figcaption>Representació dels resultats: càrregues i reaccions, diagrama de moments flectors i deformada (exagerada).</figcaption></figure><p class="nota">Aquí decideix la fletxa: per resistència n'hi hauria prou amb un IPE 200, però es deformaria massa.</p></div>
-</div>
-
-<h2>Procés de càlcul i fórmules <span class="etq">Pro</span></h2>
-<div class="card">
-<p>Pots veure el <b>procés de càlcul pas a pas</b> (predimensionat, comprovació de tensions i de fletxa) i consultar <b>les fórmules</b> de moments, reaccions i fletxes de cada solicitació, amb les unitats d'entrada i sortida, en mètric i imperial.</p>
-</div>
-
-<h2>Gratuïta i compres</h2>
-<div class="card">
-<p>L'app és gratuïta, amb publicitat. El catàleg i les fitxes són complets sense comprar res, i el dimensionador inclou 20 càlculs de prova.</p>
-<ul>
-<li><b>Dimensionador de bigues il·limitat</b>: càlculs sense límit, procés de càlcul, totes les fórmules i sense publicitat.</li>
-<li><b>Eliminar publicitat</b>: treu els anuncis.</li>
-</ul>
-<p>Pots restaurar compres anteriors des de l'app. Disponible en català, castellà, anglès, francès, alemany i italià; recorda els teus ajustos per regió (acer, coeficients, unitats i últims valors usats).</p>
-</div>
-
-<p class="peu"><a href="privacitat.html#ca">Política de privacitat</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+<p class="peu">Contacte: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
 </section>
-
-<!-- ===================== ESPAÑOL ===================== -->
 <section class="llengua" id="es" lang="es">
-<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Icono de Perfiles"><div><h1>Perfiles</h1><p class="meta">Alviltol · iPhone y iPad</p></div></header>
-<div class="card">
-<p>Un prontuario de perfiles de acero en el bolsillo: pesos, dimensiones y términos de sección de perfiles europeos y americanos, y un dimensionador de vigas que te propone el perfil adecuado para una carga y una luz dadas.</p>
-<a class="boto" href="https://apps.apple.com/app/id567765832">Descárgala en el App Store</a>
+<h1>Apps</h1>
+<p class="intro">Aplicaciones técnicas para ingeniería y construcción.</p>
+<div class="apps">
+<div class="card app"><img src="perfiles/img/icona.png" width="72" height="72" alt="Perfiles"><div>
+<h3>Perfiles</h3><p class="meta">iPhone y iPad</p>
+<p>Prontuario de perfiles de acero: pesos, dimensiones y términos de sección de perfiles europeos y americanos, y dimensionador de vigas.</p>
+<div class="enllacos"><a class="boto" href="https://apps.apple.com/app/id567765832">Descárgala en el App Store</a><a href="perfiles/#es">Más información</a><a href="perfiles/privacitat.html#es">Privacidad</a></div>
+</div></div>
+<div class="card app"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"><div>
+<h3>ArmaTec</h3><p class="meta">Android</p>
+<p>Prontuario de hormigón armado: barras de acero, áreas y separaciones, recubrimientos y anclajes según el Código Estructural, y calculadoras para la obra.</p>
+<div class="enllacos"><a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Descárgala en Google Play</a><a href="armatec/#es">Más información</a><a href="armatec/privacitat.html#es">Privacidad</a></div>
+</div></div>
 </div>
-
-<h2>Catálogo de perfiles</h2>
-<div class="card">
-<p>Elige la región (Europa o EE. UU.) y navega por tres familias:</p>
-<div class="families"><figure><img src="img/estructurals.png" width="300" height="225" alt="" loading="lazy"><figcaption>Estructurales</figcaption></figure><figure><img src="img/comercials.png" width="300" height="225" alt="" loading="lazy"><figcaption>Comerciales</figcaption></figure><figure><img src="img/tubulars.png" width="300" height="225" alt="" loading="lazy"><figcaption>Tubulares</figcaption></figure></div>
-<ul>
-<li><b>Estructurales</b> — Europa: HEA, HEB, HEM, IPE, IPN, UPN. EE. UU.: W, S, M, HP, C, MC.</li>
-<li><b>Comerciales</b> — angulares L y LD, T, pletinas, redondos, cuadrados y rectangulares macizos; en EE. UU. también WT, MT y ST.</li>
-<li><b>Tubulares</b> — tubo redondo, cuadrado, rectangular y oval; en EE. UU., HSS redondo y rectangular y PIPE.</li>
-</ul>
-<p>Con el buscador encuentras un perfil escribiendo su nombre (por ejemplo «HEB 2» muestra HEB 200, HEB 220…).</p>
-</div>
-
-<h2>Ficha del perfil</h2>
-<div class="card">
-<p>Cada perfil tiene una ficha con el dibujo acotado y todos los datos agrupados:</p>
-<ul>
-<li><b>Peso</b> por metro (calculado con una densidad de 7.850 kg/m³).</li>
-<li><b>Dimensiones</b>: altura, base, espesores de alma y ala, radios…</li>
-<li><b>Términos de sección</b>: área, momento estático, momentos de inercia, módulos resistentes, radios de giro y módulo de torsión.</li>
-<li><b>Posición del centro</b> de gravedad en perfiles asimétricos (L, T, UPN…).</li>
-<li><b>Agujeros</b>: distancia entre ejes de agujeros y diámetro máximo del agujero en las alas.</li>
-</ul>
-<p>Puedes ver los valores en <b>sistema métrico</b> o <b>imperial</b> (pulgadas, libras) y <b>exportar la ficha en PDF o imagen</b> para compartirla o archivarla.</p>
-<div class="exemple"><b>Ejemplo</b>Abres Estructurales → HEB → HEB 200 y tienes sus datos clave de un vistazo:
-<div class="fitxa"><img class="dibuix" src="img/heb.png" width="260" height="304" alt="Dibujo acotado de un perfil HEB" loading="lazy"><div class="xifres"><div><small>Peso</small><span>61,3 kg/m</span></div><div><small>h × b</small><span>200 × 200 mm</span></div><div><small>Área</small><span>78,1 cm²</span></div><div><small>I<sub>x</sub></small><span>5.696 cm⁴</span></div><div><small>W<sub>x</sub></small><span>570 cm³</span></div></div></div><p class="sub">La ficha completa, tal como la muestra la app:</p><table class="dades"><tr class="grup"><th colspan="3">Dimensiones</th></tr><tr><td class="sim">h</td><td>Altura</td><td class="val">200 mm</td></tr><tr><td class="sim">b</td><td>Base</td><td class="val">200 mm</td></tr><tr><td class="sim">e</td><td>Espesor alma</td><td class="val">9 mm</td></tr><tr><td class="sim">e<sub>1</sub></td><td>Espesor ala</td><td class="val">15 mm</td></tr><tr><td class="sim">r</td><td>Radio de la curva interior</td><td class="val">18 mm</td></tr><tr><td class="sim">h<sub>1</sub></td><td>Altura de la parte plana del alma</td><td class="val">134 mm</td></tr><tr class="grup"><th colspan="3">Peso y sección</th></tr><tr><td class="sim">P</td><td>Peso por metro</td><td class="val">61,3 kg/m</td></tr><tr><td class="sim">A</td><td>Área de la sección</td><td class="val">78,1 cm²</td></tr><tr><td class="sim">u</td><td>Perímetro de la sección</td><td class="val">1.150 mm</td></tr><tr class="grup"><th colspan="3">Términos de sección</th></tr><tr><td class="sim">I<sub>x</sub></td><td>Momento de inercia de la sección respecto al eje X</td><td class="val">5.696 cm⁴</td></tr><tr><td class="sim">W<sub>x</sub></td><td>Módulo resistente de la sección respecto al eje X</td><td class="val">570 cm³</td></tr><tr><td class="sim">S<sub>x</sub></td><td>Momento estático de media sección respecto al eje X</td><td class="val">321 cm³</td></tr><tr><td class="sim">i<sub>x</sub></td><td>Radio de giro de la sección respecto al eje X</td><td class="val">8,54 cm</td></tr><tr><td class="sim">I<sub>y</sub></td><td>Momento de inercia de la sección respecto al eje Y</td><td class="val">2.003 cm⁴</td></tr><tr><td class="sim">W<sub>y</sub></td><td>Módulo resistente de la sección respecto al eje Y</td><td class="val">200 cm³</td></tr><tr><td class="sim">i<sub>y</sub></td><td>Radio de giro de la sección respecto al eje Y</td><td class="val">5,07 cm</td></tr><tr><td class="sim">I<sub>t</sub></td><td>Módulo de torsión de la sección</td><td class="val">63,4 cm⁴</td></tr><tr><td class="sim">I<sub>a</sub></td><td>Módulo de curvatura de la sección</td><td class="val">171.100 cm⁶</td></tr><tr class="grup"><th colspan="3">Agujeros</th></tr><tr><td class="sim">w</td><td>Distancia entre ejes de agujeros</td><td class="val">110 mm</td></tr><tr><td class="sim">w<sub>1</sub></td><td>Distancia eje agujero a extremo</td><td class="val">45 mm</td></tr><tr><td class="sim">a</td><td>Diámetro del agujero</td><td class="val">25 mm</td></tr></table></div>
-</div>
-
-<h2>Dimensionador de vigas</h2>
-<div class="card">
-<p>En la pestaña de cálculo, la app busca el primer perfil de la serie elegida que cumple tensión y flecha. En tres pasos:</p>
-<ol>
-<li><b>Tipo de perfil</b>: HEB, IPE, IPN… o W, S, M, HP en EE. UU.</li>
-<li><b>Solicitación</b>: apoyada–apoyada, empotrada–apoyada, empotrada–empotrada o voladizo.</li>
-<li><b>Cargas</b>: puntual centrada, puntual descentrada, repartida en toda la longitud o repartida en un tramo (16 casos en total).</li>
-</ol>
-<div class="solis"><figure><img class="dibuix" src="img/Solis0-RecRecQR.png" width="428" height="236" alt="Esquema de viga: Apoyada–apoyada" loading="lazy"><figcaption>Apoyada–apoyada</figcaption></figure><figure><img class="dibuix" src="img/Solis1-EmpRec1FC.png" width="428" height="236" alt="Esquema de viga: Empotrada–apoyada" loading="lazy"><figcaption>Empotrada–apoyada</figcaption></figure><figure><img class="dibuix" src="img/Solis2-EmpEmp1FNC.png" width="428" height="236" alt="Esquema de viga: Empotrada–empotrada" loading="lazy"><figcaption>Empotrada–empotrada</figcaption></figure><figure><img class="dibuix" src="img/Solis3-Vol1FExtrem.png" width="428" height="236" alt="Esquema de viga: Voladizo" loading="lazy"><figcaption>Voladizo</figcaption></figure></div>
-<p>En el botón de características de cálculo configuras el <b>tipo de acero</b> (S235, S275, S355… o A36, A572, A992…), el <b>coeficiente de mayoración</b> de cargas, la <b>flecha admisible</b> (de L/250 a L/500 según el uso), si quieres tener en cuenta el <b>peso propio</b> y, en perfiles americanos, una <b>anchura mínima</b> de base.</p>
-<p>El resultado muestra el <b>perfil propuesto</b>, las <b>reacciones</b> y los <b>momentos</b> en los apoyos, el momento máximo, la <b>flecha máxima</b> y dónde se produce, y el peso de la viga. Puedes exportarlo en PDF o imagen.</p>
-<div class="exemple"><b>Ejemplo de cálculo</b>¿Qué IPE hace falta para una viga de 5 m apoyada en ambos extremos que debe soportar una carga repartida de 1.000 kg/m?<p class="sub">Datos introducidos</p><table class="dades entrada"><tr><td>Solicitación</td><td class="val">Apoyada–apoyada, carga repartida</td></tr><tr><td>Carga q</td><td class="val">1.000 kg/m</td></tr><tr><td>Longitud L</td><td class="val">5 m</td></tr><tr><td>Tipo de acero</td><td class="val">S275JR · 275 N/mm² = 2.804 kg/cm²</td></tr><tr><td>Coef. mayoración</td><td class="val">1,50</td></tr><tr><td>Flecha máxima</td><td class="val">L/400 = 1,25 cm</td></tr><tr><td>Peso propio</td><td class="val">Sí</td></tr></table><p class="sub">Proceso de cálculo <span class="etq">Pro</span></p><ol class="proces"><li>Momento de las cargas: M = q·L²/8 = 3.125 kg·m; mayorado ×1,50 = 4.687,5 kg·m.</li><li>Predimensionado: W<sub>x</sub> ≥ M / σ<sub>adm</sub> = 468.750 / 2.804 = 167,2 cm³ ⇒ IPE 200 (W<sub>x</sub> = 194 cm³).</li><li>Tensiones con el peso propio: σ = 2.452 &lt; 2.804 kg/cm² ✅ · cortante τ = 427 &lt; 1.619 kg/cm² ✅</li><li>Flecha: IPE 200 → 2,04 cm ❌ · IPE 220 → 1,44 cm ❌ · IPE 240 → 1,03 cm ✅</li></ol><p class="sub">Resultados</p><div class="xifres res"><div class=destacat><small>Perfil calculado</small><span>IPE 240</span></div><div><small>Reacción en A</small><span>3.827 kg</span></div><div><small>Reacción en B</small><span>3.827 kg</span></div><div><small>Momento máximo</small><span>4.783 kg·m</span><small>x = 2,50 m</small></div><div><small>Momento en A y B</small><span>0</span></div><div><small>Flecha máxima</small><span>1,03 cm</span><small>x = 2,50 m</small></div><div><small>Peso perfil</small><span>30,7 kg/m</span><small>5 m → 153,5 kg</small></div><div><small>Tensión máxima</small><span>1.476 kg/cm²</span><small>&lt; 2.804 kg/cm²</small></div></div><figure class="figdiag"><svg class="diag" viewBox="0 0 640 430" role="img" aria-label="Representación de los resultados: cargas y reacciones, diagrama de momentos flectores y deformada (exagerada)."><text class="eti" x="8" y="20">Cargas y reacciones</text><text class="acc-t" x="550" y="44" text-anchor="end">q = 1.000 kg/m</text><line class="acc" x1="90" y1="56" x2="550" y2="56"/><line class="acc" x1="90.0" y1="56" x2="90.0" y2="76"/><polygon class="acc-f" points="86.0,74 94.0,74 90.0,82"/><line class="acc" x1="128.3" y1="56" x2="128.3" y2="76"/><polygon class="acc-f" points="124.3,74 132.3,74 128.3,82"/><line class="acc" x1="166.7" y1="56" x2="166.7" y2="76"/><polygon class="acc-f" points="162.7,74 170.7,74 166.7,82"/><line class="acc" x1="205.0" y1="56" x2="205.0" y2="76"/><polygon class="acc-f" points="201.0,74 209.0,74 205.0,82"/><line class="acc" x1="243.3" y1="56" x2="243.3" y2="76"/><polygon class="acc-f" points="239.3,74 247.3,74 243.3,82"/><line class="acc" x1="281.7" y1="56" x2="281.7" y2="76"/><polygon class="acc-f" points="277.7,74 285.7,74 281.7,82"/><line class="acc" x1="320.0" y1="56" x2="320.0" y2="76"/><polygon class="acc-f" points="316.0,74 324.0,74 320.0,82"/><line class="acc" x1="358.3" y1="56" x2="358.3" y2="76"/><polygon class="acc-f" points="354.3,74 362.3,74 358.3,82"/><line class="acc" x1="396.7" y1="56" x2="396.7" y2="76"/><polygon class="acc-f" points="392.7,74 400.7,74 396.7,82"/><line class="acc" x1="435.0" y1="56" x2="435.0" y2="76"/><polygon class="acc-f" points="431.0,74 439.0,74 435.0,82"/><line class="acc" x1="473.3" y1="56" x2="473.3" y2="76"/><polygon class="acc-f" points="469.3,74 477.3,74 473.3,82"/><line class="acc" x1="511.7" y1="56" x2="511.7" y2="76"/><polygon class="acc-f" points="507.7,74 515.7,74 511.7,82"/><line class="acc" x1="550.0" y1="56" x2="550.0" y2="76"/><polygon class="acc-f" points="546.0,74 554.0,74 550.0,82"/><rect class="biga" x="90" y="84" width="460" height="10" rx="2"/><polygon class="sup" points="90,94 78,114 102,114"/><line class="rea" x1="90" y1="158" x2="90" y2="124"/><polygon class="rea-f" points="84,128 96,128 90,118"/><polygon class="sup" points="550,94 538,114 562,114"/><line class="rea" x1="550" y1="158" x2="550" y2="124"/><polygon class="rea-f" points="544,128 556,128 550,118"/><text x="104" y="152">R<tspan class="idx" dy="4">A</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text x="536" y="152" text-anchor="end">R<tspan class="idx" dy="4">B</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text class="sec" x="320.0" y="122" text-anchor="middle">L = 5 m · IPE 240</text><text class="eti" x="8" y="190">Momentos flectores</text><path class="mom" d="M90,205 Q320.0,355 550,205 Z"/><line class="base" x1="90" y1="205" x2="550" y2="205"/><line class="guia" x1="320.0" y1="205" x2="320.0" y2="280"/><text x="320.0" y="305" text-anchor="middle">M<tspan class="idx" dy="4">max</tspan><tspan dy="-4"> = 4.783 kg·m</tspan></text><text class="eti" x="8" y="330">Deformada</text><line class="guia" x1="90" y1="350" x2="550" y2="350"/><path class="def" d="M90,350 C240,402 400,402 550,350"/><polygon class="sup" points="90,350 81,365 99,365"/><polygon class="sup" points="550,350 541,365 559,365"/><line class="acc" x1="320.0" y1="350" x2="320.0" y2="389"/><text x="320.0" y="418" text-anchor="middle">f = 1,03 cm  (x = 2,50 m)  ≤ 1,25 cm</text></svg><figcaption>Representación de los resultados: cargas y reacciones, diagrama de momentos flectores y deformada (exagerada).</figcaption></figure><p class="nota">Aquí decide la flecha: por resistencia bastaría un IPE 200, pero se deformaría demasiado.</p></div>
-</div>
-
-<h2>Proceso de cálculo y fórmulas <span class="etq">Pro</span></h2>
-<div class="card">
-<p>Puedes ver el <b>proceso de cálculo paso a paso</b> (predimensionado, comprobación de tensiones y de flecha) y consultar <b>las fórmulas</b> de momentos, reacciones y flechas de cada solicitación, con las unidades de entrada y salida, en métrico e imperial.</p>
-</div>
-
-<h2>Gratis y compras</h2>
-<div class="card">
-<p>La app es gratuita, con publicidad. El catálogo y las fichas son completos sin comprar nada, y el dimensionador incluye 20 cálculos de prueba.</p>
-<ul>
-<li><b>Dimensionador de vigas ilimitado</b>: cálculos sin límite, proceso de cálculo, todas las fórmulas y sin publicidad.</li>
-<li><b>Eliminar publicidad</b>: quita los anuncios.</li>
-</ul>
-<p>Puedes restaurar compras anteriores desde la app. Disponible en catalán, castellano, inglés, francés, alemán e italiano; recuerda tus ajustes por región (acero, coeficientes, unidades y últimos valores usados).</p>
-</div>
-
-<p class="peu"><a href="privacitat.html#es">Política de privacidad</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+<p class="peu">Contacto: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
 </section>
-
-<!-- ===================== ENGLISH ===================== -->
 <section class="llengua" id="en" lang="en">
-<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Perfiles icon"><div><h1>Perfiles</h1><p class="meta">Alviltol · iPhone and iPad</p></div></header>
-<div class="card">
-<p>A steel section handbook in your pocket: weights, dimensions and section properties of European and American profiles, plus a beam sizer that suggests the right section for a given load and span.</p>
-<a class="boto" href="https://apps.apple.com/app/id567765832">Download on the App Store</a>
+<h1>Apps</h1>
+<p class="intro">Technical apps for engineering and construction.</p>
+<div class="apps">
+<div class="card app"><img src="perfiles/img/icona.png" width="72" height="72" alt="Perfiles"><div>
+<h3>Perfiles</h3><p class="meta">iPhone and iPad</p>
+<p>Steel section handbook: weights, dimensions and section properties of European and American profiles, plus a beam sizer.</p>
+<div class="enllacos"><a class="boto" href="https://apps.apple.com/app/id567765832">Download on the App Store</a><a href="perfiles/#en">More information</a><a href="perfiles/privacitat.html#en">Privacy</a></div>
+</div></div>
+<div class="card app"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"><div>
+<h3>ArmaTec</h3><p class="meta">Android</p>
+<p>Reinforced concrete handbook: steel rebars, areas and spacing, concrete cover and anchorage according to the Spanish Structural Code, and calculators for site work.</p>
+<div class="enllacos"><a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Get it on Google Play</a><a href="armatec/#en">More information</a><a href="armatec/privacitat.html#en">Privacy</a></div>
+</div></div>
 </div>
-
-<h2>Section catalogue</h2>
-<div class="card">
-<p>Choose a region (Europe or USA) and browse three families:</p>
-<div class="families"><figure><img src="img/estructurals.png" width="300" height="225" alt="" loading="lazy"><figcaption>Structural</figcaption></figure><figure><img src="img/comercials.png" width="300" height="225" alt="" loading="lazy"><figcaption>Merchant bars</figcaption></figure><figure><img src="img/tubulars.png" width="300" height="225" alt="" loading="lazy"><figcaption>Hollow sections</figcaption></figure></div>
-<ul>
-<li><b>Structural</b> — Europe: HEA, HEB, HEM, IPE, IPN, UPN. USA: W, S, M, HP, C, MC.</li>
-<li><b>Merchant bars</b> — L and double-L angles, T, flat bars, solid round, square and rectangular bars; in the USA also WT, MT and ST.</li>
-<li><b>Hollow sections</b> — round, square, rectangular and oval tubes; in the USA, round and rectangular HSS and PIPE.</li>
-</ul>
-<p>Use search to find a section by name (for example “HEB 2” shows HEB 200, HEB 220…).</p>
-</div>
-
-<h2>Section sheet</h2>
-<div class="card">
-<p>Each section has a sheet with a dimensioned drawing and all its data grouped:</p>
-<ul>
-<li><b>Weight</b> per metre (based on a steel density of 7,850 kg/m³).</li>
-<li><b>Dimensions</b>: depth, width, web and flange thickness, radii…</li>
-<li><b>Section properties</b>: area, first moment of area, moments of inertia, section moduli, radii of gyration and torsion constant.</li>
-<li><b>Centroid position</b> for asymmetric sections (L, T, UPN…).</li>
-<li><b>Holes</b>: gauge between hole centres and maximum hole diameter in the flanges.</li>
-</ul>
-<p>View values in <b>metric</b> or <b>imperial</b> units (inches, pounds) and <b>export the sheet as a PDF or image</b> to share or file it.</p>
-<div class="exemple"><b>Example</b>Open Structural → HEB → HEB 200 and see its key figures at a glance:
-<div class="fitxa"><img class="dibuix" src="img/heb.png" width="260" height="304" alt="Dimensioned drawing of an HEB section" loading="lazy"><div class="xifres"><div><small>Weight</small><span>61.3 kg/m</span></div><div><small>h × b</small><span>200 × 200 mm</span></div><div><small>Area</small><span>78.1 cm²</span></div><div><small>I<sub>x</sub></small><span>5,696 cm⁴</span></div><div><small>W<sub>x</sub></small><span>570 cm³</span></div></div></div><p class="sub">The full sheet, as the app shows it:</p><table class="dades"><tr class="grup"><th colspan="3">Dimensions</th></tr><tr><td class="sim">h</td><td>Height</td><td class="val">200 mm</td></tr><tr><td class="sim">b</td><td>Width of flange</td><td class="val">200 mm</td></tr><tr><td class="sim">e</td><td>Thickness of web</td><td class="val">9 mm</td></tr><tr><td class="sim">e<sub>1</sub></td><td>Thickness of flange</td><td class="val">15 mm</td></tr><tr><td class="sim">r</td><td>Root radius</td><td class="val">18 mm</td></tr><tr><td class="sim">h<sub>1</sub></td><td>Depth of flat web</td><td class="val">134 mm</td></tr><tr class="grup"><th colspan="3">Weight and section</th></tr><tr><td class="sim">P</td><td>Weight per metre</td><td class="val">61.3 kg/m</td></tr><tr><td class="sim">A</td><td>Area of section</td><td class="val">78.1 cm²</td></tr><tr><td class="sim">u</td><td>Perimeter of section</td><td class="val">1,150 mm</td></tr><tr class="grup"><th colspan="3">Section properties</th></tr><tr><td class="sim">I<sub>x</sub></td><td>Moment of inertia of the section about the X axis</td><td class="val">5,696 cm⁴</td></tr><tr><td class="sim">W<sub>x</sub></td><td>Section modulus about the X axis</td><td class="val">570 cm³</td></tr><tr><td class="sim">S<sub>x</sub></td><td>First moment of area of half section about the X axis</td><td class="val">321 cm³</td></tr><tr><td class="sim">i<sub>x</sub></td><td>Radius of gyration of the section about the X axis</td><td class="val">8.54 cm</td></tr><tr><td class="sim">I<sub>y</sub></td><td>Moment of inertia of the section about the Y axis</td><td class="val">2,003 cm⁴</td></tr><tr><td class="sim">W<sub>y</sub></td><td>Section modulus about the Y axis</td><td class="val">200 cm³</td></tr><tr><td class="sim">i<sub>y</sub></td><td>Radius of gyration of the section about the Y axis</td><td class="val">5.07 cm</td></tr><tr><td class="sim">I<sub>t</sub></td><td>Torsion constant of the section</td><td class="val">63.4 cm⁴</td></tr><tr><td class="sim">I<sub>a</sub></td><td>Warping constant of the section</td><td class="val">171,100 cm⁶</td></tr><tr class="grup"><th colspan="3">Holes</th></tr><tr><td class="sim">w</td><td>Distance between hole axes</td><td class="val">110 mm</td></tr><tr><td class="sim">w<sub>1</sub></td><td>Distance from hole axis to the edge</td><td class="val">45 mm</td></tr><tr><td class="sim">a</td><td>Hole diameter</td><td class="val">25 mm</td></tr></table></div>
-</div>
-
-<h2>Beam sizer</h2>
-<div class="card">
-<p>In the calculation tab, the app finds the first section in the chosen series that meets both stress and deflection limits. Three steps:</p>
-<ol>
-<li><b>Section type</b>: HEB, IPE, IPN… or W, S, M, HP in the USA.</li>
-<li><b>Support conditions</b>: pinned–pinned, fixed–pinned, fixed–fixed or cantilever.</li>
-<li><b>Loads</b>: central point load, off-centre point load, full-length distributed load or partial distributed load (16 cases in total).</li>
-</ol>
-<div class="solis"><figure><img class="dibuix" src="img/Solis0-RecRecQR.png" width="428" height="236" alt="Beam diagram: Pinned–pinned" loading="lazy"><figcaption>Pinned–pinned</figcaption></figure><figure><img class="dibuix" src="img/Solis1-EmpRec1FC.png" width="428" height="236" alt="Beam diagram: Fixed–pinned" loading="lazy"><figcaption>Fixed–pinned</figcaption></figure><figure><img class="dibuix" src="img/Solis2-EmpEmp1FNC.png" width="428" height="236" alt="Beam diagram: Fixed–fixed" loading="lazy"><figcaption>Fixed–fixed</figcaption></figure><figure><img class="dibuix" src="img/Solis3-Vol1FExtrem.png" width="428" height="236" alt="Beam diagram: Cantilever" loading="lazy"><figcaption>Cantilever</figcaption></figure></div>
-<p>The settings button lets you set the <b>steel grade</b> (S235, S275, S355… or A36, A572, A992…), the <b>load factor</b>, the <b>allowable deflection</b> (L/250 to L/500 depending on use), whether to include <b>self-weight</b> and, for American sections, a <b>minimum width</b>.</p>
-<p>The result shows the <b>suggested section</b>, the <b>reactions</b> and <b>moments</b> at the supports, the maximum moment, the <b>maximum deflection</b> and where it occurs, and the beam weight. You can export it as a PDF or image.</p>
-<div class="exemple"><b>Worked example</b>Which IPE do we need for a 5 m beam, simply supported at both ends, carrying a distributed load of 1,000 kg/m?<p class="sub">Input data</p><table class="dades entrada"><tr><td>Supports and load</td><td class="val">Pinned–pinned, distributed load</td></tr><tr><td>Load q</td><td class="val">1,000 kg/m</td></tr><tr><td>Length L</td><td class="val">5 m</td></tr><tr><td>Steel grade</td><td class="val">S275JR · 275 N/mm² = 2,804 kg/cm²</td></tr><tr><td>Load factor</td><td class="val">1.50</td></tr><tr><td>Maximum deflection</td><td class="val">L/400 = 1.25 cm</td></tr><tr><td>Self-weight</td><td class="val">Yes</td></tr></table><p class="sub">Calculation process <span class="etq">Pro</span></p><ol class="proces"><li>Moment from loads: M = q·L²/8 = 3,125 kg·m; factored ×1.50 = 4,687.5 kg·m.</li><li>Pre-sizing: W<sub>x</sub> ≥ M / σ<sub>adm</sub> = 468,750 / 2,804 = 167.2 cm³ ⇒ IPE 200 (W<sub>x</sub> = 194 cm³).</li><li>Stresses including self-weight: σ = 2,452 &lt; 2,804 kg/cm² ✅ · shear τ = 427 &lt; 1,619 kg/cm² ✅</li><li>Deflection: IPE 200 → 2.04 cm ❌ · IPE 220 → 1.44 cm ❌ · IPE 240 → 1.03 cm ✅</li></ol><p class="sub">Results</p><div class="xifres res"><div class=destacat><small>Calculated section</small><span>IPE 240</span></div><div><small>Reaction at A</small><span>3,827 kg</span></div><div><small>Reaction at B</small><span>3,827 kg</span></div><div><small>Maximum moment</small><span>4,783 kg·m</span><small>x = 2.50 m</small></div><div><small>Moment at A and B</small><span>0</span></div><div><small>Maximum deflection</small><span>1.03 cm</span><small>x = 2.50 m</small></div><div><small>Section weight</small><span>30.7 kg/m</span><small>5 m → 153.5 kg</small></div><div><small>Maximum stress</small><span>1,476 kg/cm²</span><small>&lt; 2,804 kg/cm²</small></div></div><figure class="figdiag"><svg class="diag" viewBox="0 0 640 430" role="img" aria-label="Results diagram: loads and reactions, bending moment diagram and deflected shape (exaggerated)."><text class="eti" x="8" y="20">Loads and reactions</text><text class="acc-t" x="550" y="44" text-anchor="end">q = 1,000 kg/m</text><line class="acc" x1="90" y1="56" x2="550" y2="56"/><line class="acc" x1="90.0" y1="56" x2="90.0" y2="76"/><polygon class="acc-f" points="86.0,74 94.0,74 90.0,82"/><line class="acc" x1="128.3" y1="56" x2="128.3" y2="76"/><polygon class="acc-f" points="124.3,74 132.3,74 128.3,82"/><line class="acc" x1="166.7" y1="56" x2="166.7" y2="76"/><polygon class="acc-f" points="162.7,74 170.7,74 166.7,82"/><line class="acc" x1="205.0" y1="56" x2="205.0" y2="76"/><polygon class="acc-f" points="201.0,74 209.0,74 205.0,82"/><line class="acc" x1="243.3" y1="56" x2="243.3" y2="76"/><polygon class="acc-f" points="239.3,74 247.3,74 243.3,82"/><line class="acc" x1="281.7" y1="56" x2="281.7" y2="76"/><polygon class="acc-f" points="277.7,74 285.7,74 281.7,82"/><line class="acc" x1="320.0" y1="56" x2="320.0" y2="76"/><polygon class="acc-f" points="316.0,74 324.0,74 320.0,82"/><line class="acc" x1="358.3" y1="56" x2="358.3" y2="76"/><polygon class="acc-f" points="354.3,74 362.3,74 358.3,82"/><line class="acc" x1="396.7" y1="56" x2="396.7" y2="76"/><polygon class="acc-f" points="392.7,74 400.7,74 396.7,82"/><line class="acc" x1="435.0" y1="56" x2="435.0" y2="76"/><polygon class="acc-f" points="431.0,74 439.0,74 435.0,82"/><line class="acc" x1="473.3" y1="56" x2="473.3" y2="76"/><polygon class="acc-f" points="469.3,74 477.3,74 473.3,82"/><line class="acc" x1="511.7" y1="56" x2="511.7" y2="76"/><polygon class="acc-f" points="507.7,74 515.7,74 511.7,82"/><line class="acc" x1="550.0" y1="56" x2="550.0" y2="76"/><polygon class="acc-f" points="546.0,74 554.0,74 550.0,82"/><rect class="biga" x="90" y="84" width="460" height="10" rx="2"/><polygon class="sup" points="90,94 78,114 102,114"/><line class="rea" x1="90" y1="158" x2="90" y2="124"/><polygon class="rea-f" points="84,128 96,128 90,118"/><polygon class="sup" points="550,94 538,114 562,114"/><line class="rea" x1="550" y1="158" x2="550" y2="124"/><polygon class="rea-f" points="544,128 556,128 550,118"/><text x="104" y="152">R<tspan class="idx" dy="4">A</tspan><tspan dy="-4"> = 3,827 kg</tspan></text><text x="536" y="152" text-anchor="end">R<tspan class="idx" dy="4">B</tspan><tspan dy="-4"> = 3,827 kg</tspan></text><text class="sec" x="320.0" y="122" text-anchor="middle">L = 5 m · IPE 240</text><text class="eti" x="8" y="190">Bending moments</text><path class="mom" d="M90,205 Q320.0,355 550,205 Z"/><line class="base" x1="90" y1="205" x2="550" y2="205"/><line class="guia" x1="320.0" y1="205" x2="320.0" y2="280"/><text x="320.0" y="305" text-anchor="middle">M<tspan class="idx" dy="4">max</tspan><tspan dy="-4"> = 4,783 kg·m</tspan></text><text class="eti" x="8" y="330">Deflected shape</text><line class="guia" x1="90" y1="350" x2="550" y2="350"/><path class="def" d="M90,350 C240,402 400,402 550,350"/><polygon class="sup" points="90,350 81,365 99,365"/><polygon class="sup" points="550,350 541,365 559,365"/><line class="acc" x1="320.0" y1="350" x2="320.0" y2="389"/><text x="320.0" y="418" text-anchor="middle">f = 1.03 cm  (x = 2.50 m)  ≤ 1.25 cm</text></svg><figcaption>Results diagram: loads and reactions, bending moment diagram and deflected shape (exaggerated).</figcaption></figure><p class="nota">Deflection governs here: an IPE 200 would be strong enough, but it would deflect too much.</p></div>
-</div>
-
-<h2>Calculation process and formulas <span class="etq">Pro</span></h2>
-<div class="card">
-<p>See the <b>step-by-step calculation</b> (pre-sizing, stress check and deflection check) and browse <b>the formulas</b> for moments, reactions and deflections in every load case, with input and output units, in metric and imperial.</p>
-</div>
-
-<h2>Free and purchases</h2>
-<div class="card">
-<p>The app is free, with ads. The catalogue and section sheets are complete without buying anything, and the beam sizer includes 20 trial calculations.</p>
-<ul>
-<li><b>Unlimited beam sizer</b>: unlimited calculations, calculation process, all formulas and no ads.</li>
-<li><b>Remove ads</b>: removes advertising.</li>
-</ul>
-<p>You can restore previous purchases from within the app. Available in Catalan, Spanish, English, French, German and Italian; it remembers your settings per region (steel, factors, units and last values used).</p>
-</div>
-
-<p class="peu"><a href="privacitat.html#en">Privacy policy</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+<p class="peu">Contact: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
 </section>
-
-<!-- ===================== FRANÇAIS ===================== -->
 <section class="llengua" id="fr" lang="fr">
-<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Icône de Perfiles"><div><h1>Perfiles</h1><p class="meta">Alviltol · iPhone et iPad</p></div></header>
-<div class="card">
-<p>Un catalogue de profilés en acier dans votre poche : poids, dimensions et caractéristiques de section des profilés européens et américains, et un dimensionneur de poutres qui propose le profilé adapté à une charge et une portée données.</p>
-<a class="boto" href="https://apps.apple.com/app/id567765832">Télécharger sur l'App Store</a>
+<h1>Apps</h1>
+<p class="intro">Applications techniques pour l'ingénierie et la construction.</p>
+<div class="apps">
+<div class="card app"><img src="perfiles/img/icona.png" width="72" height="72" alt="Perfiles"><div>
+<h3>Perfiles</h3><p class="meta">iPhone et iPad</p>
+<p>Mémento des profilés en acier : poids, dimensions et caractéristiques de section des profilés européens et américains, et dimensionneur de poutres.</p>
+<div class="enllacos"><a class="boto" href="https://apps.apple.com/app/id567765832">Télécharger dans l'App Store</a><a href="perfiles/#fr">En savoir plus</a><a href="perfiles/privacitat.html#fr">Confidentialité</a></div>
+</div></div>
+<div class="card app"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"><div>
+<h3>ArmaTec</h3><p class="meta">Android</p>
+<p>Mémento du béton armé : barres d'acier, sections et espacements, enrobages et ancrages selon le Code structurel espagnol, et calculatrices pour le chantier. Disponible en catalan, espagnol et anglais.</p>
+<div class="enllacos"><a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Disponible sur Google Play</a><a href="armatec/#en">En savoir plus</a><a href="armatec/privacitat.html#en">Confidentialité</a></div>
+</div></div>
 </div>
-
-<h2>Catalogue de profilés</h2>
-<div class="card">
-<p>Choisissez la région (Europe ou États-Unis) et parcourez trois familles :</p>
-<div class="families"><figure><img src="img/estructurals.png" width="300" height="225" alt="" loading="lazy"><figcaption>Structurels</figcaption></figure><figure><img src="img/comercials.png" width="300" height="225" alt="" loading="lazy"><figcaption>Marchands</figcaption></figure><figure><img src="img/tubulars.png" width="300" height="225" alt="" loading="lazy"><figcaption>Tubes</figcaption></figure></div>
-<ul>
-<li><b>Structurels</b> — Europe : HEA, HEB, HEM, IPE, IPN, UPN. États-Unis : W, S, M, HP, C, MC.</li>
-<li><b>Marchands</b> — cornières L et LD, T, plats, ronds, carrés et rectangulaires pleins ; aux États-Unis aussi WT, MT et ST.</li>
-<li><b>Tubes</b> — ronds, carrés, rectangulaires et ovales ; aux États-Unis, HSS rond et rectangulaire et PIPE.</li>
-</ul>
-<p>La recherche trouve un profilé par son nom (par exemple « HEB 2 » affiche HEB 200, HEB 220…).</p>
-</div>
-
-<h2>Fiche du profilé</h2>
-<div class="card">
-<p>Chaque profilé dispose d'une fiche avec un dessin coté et toutes ses données regroupées :</p>
-<ul>
-<li><b>Poids</b> au mètre (calculé avec une masse volumique de 7 850 kg/m³).</li>
-<li><b>Dimensions</b> : hauteur, largeur, épaisseurs d'âme et d'aile, rayons…</li>
-<li><b>Caractéristiques de section</b> : aire, moment statique, moments d'inertie, modules de résistance, rayons de giration et module de torsion.</li>
-<li><b>Position du centre</b> de gravité des profilés asymétriques (L, T, UPN…).</li>
-<li><b>Perçages</b> : entraxe des trous et diamètre maximal de trou dans les ailes.</li>
-</ul>
-<p>Affichez les valeurs en <b>métrique</b> ou en <b>impérial</b> (pouces, livres) et <b>exportez la fiche en PDF ou en image</b> pour la partager ou l'archiver.</p>
-<div class="exemple"><b>Exemple</b>Ouvrez Structurels → HEB → HEB 200 et voyez ses chiffres clés en un coup d'œil :
-<div class="fitxa"><img class="dibuix" src="img/heb.png" width="260" height="304" alt="Dessin coté d'un profilé HEB" loading="lazy"><div class="xifres"><div><small>Poids</small><span>61,3 kg/m</span></div><div><small>h × b</small><span>200 × 200 mm</span></div><div><small>Aire</small><span>78,1 cm²</span></div><div><small>I<sub>x</sub></small><span>5 696 cm⁴</span></div><div><small>W<sub>x</sub></small><span>570 cm³</span></div></div></div><p class="sub">La fiche complète, telle que l'app l'affiche :</p><table class="dades"><tr class="grup"><th colspan="3">Dimensions</th></tr><tr><td class="sim">h</td><td>Hauteur</td><td class="val">200 mm</td></tr><tr><td class="sim">b</td><td>Base</td><td class="val">200 mm</td></tr><tr><td class="sim">e</td><td>Épaisseur d'âme</td><td class="val">9 mm</td></tr><tr><td class="sim">e<sub>1</sub></td><td>Épaisseur d'aile</td><td class="val">15 mm</td></tr><tr><td class="sim">r</td><td>Rayon de la courbe intérieure</td><td class="val">18 mm</td></tr><tr><td class="sim">h<sub>1</sub></td><td>Hauteur de la partie plate de l'âme</td><td class="val">134 mm</td></tr><tr class="grup"><th colspan="3">Poids et section</th></tr><tr><td class="sim">P</td><td>Poids au mètre</td><td class="val">61,3 kg/m</td></tr><tr><td class="sim">A</td><td>Aire de la section</td><td class="val">78,1 cm²</td></tr><tr><td class="sim">u</td><td>Périmètre de la section</td><td class="val">1 150 mm</td></tr><tr class="grup"><th colspan="3">Caractéristiques de section</th></tr><tr><td class="sim">I<sub>x</sub></td><td>Moment d'inertie de la section par rapport à l'axe X</td><td class="val">5 696 cm⁴</td></tr><tr><td class="sim">W<sub>x</sub></td><td>Module résistant de la section par rapport à l'axe X</td><td class="val">570 cm³</td></tr><tr><td class="sim">S<sub>x</sub></td><td>Moment statique de la demi-section par rapport à l'axe X</td><td class="val">321 cm³</td></tr><tr><td class="sim">i<sub>x</sub></td><td>Rayon de giration de la section par rapport à l'axe X</td><td class="val">8,54 cm</td></tr><tr><td class="sim">I<sub>y</sub></td><td>Moment d'inertie de la section par rapport à l'axe Y</td><td class="val">2 003 cm⁴</td></tr><tr><td class="sim">W<sub>y</sub></td><td>Module résistant de la section par rapport à l'axe Y</td><td class="val">200 cm³</td></tr><tr><td class="sim">i<sub>y</sub></td><td>Rayon de giration de la section par rapport à l'axe Y</td><td class="val">5,07 cm</td></tr><tr><td class="sim">I<sub>t</sub></td><td>Module de torsion de la section</td><td class="val">63,4 cm⁴</td></tr><tr><td class="sim">I<sub>a</sub></td><td>Module de courbure de la section</td><td class="val">171 100 cm⁶</td></tr><tr class="grup"><th colspan="3">Perçages</th></tr><tr><td class="sim">w</td><td>Distance entre axes de trous</td><td class="val">110 mm</td></tr><tr><td class="sim">w<sub>1</sub></td><td>Distance axe trou à l'extrême</td><td class="val">45 mm</td></tr><tr><td class="sim">a</td><td>Diamètre du trou</td><td class="val">25 mm</td></tr></table></div>
-</div>
-
-<h2>Dimensionneur de poutres</h2>
-<div class="card">
-<p>Dans l'onglet de calcul, l'app cherche le premier profilé de la série choisie qui vérifie la contrainte et la flèche. En trois étapes :</p>
-<ol>
-<li><b>Type de profilé</b> : HEB, IPE, IPN… ou W, S, M, HP aux États-Unis.</li>
-<li><b>Appuis</b> : appui–appui, encastrement–appui, encastrement–encastrement ou console.</li>
-<li><b>Charges</b> : ponctuelle centrée, ponctuelle excentrée, répartie sur toute la longueur ou répartie sur un tronçon (16 cas au total).</li>
-</ol>
-<div class="solis"><figure><img class="dibuix" src="img/Solis0-RecRecQR.png" width="428" height="236" alt="Schéma de poutre: Appui–appui" loading="lazy"><figcaption>Appui–appui</figcaption></figure><figure><img class="dibuix" src="img/Solis1-EmpRec1FC.png" width="428" height="236" alt="Schéma de poutre: Encastrement–appui" loading="lazy"><figcaption>Encastrement–appui</figcaption></figure><figure><img class="dibuix" src="img/Solis2-EmpEmp1FNC.png" width="428" height="236" alt="Schéma de poutre: Encastrement–encastrement" loading="lazy"><figcaption>Encastrement–encastrement</figcaption></figure><figure><img class="dibuix" src="img/Solis3-Vol1FExtrem.png" width="428" height="236" alt="Schéma de poutre: Console" loading="lazy"><figcaption>Console</figcaption></figure></div>
-<p>Le bouton des paramètres de calcul permet de régler la <b>nuance d'acier</b> (S235, S275, S355… ou A36, A572, A992…), le <b>coefficient de majoration</b> des charges, la <b>flèche admissible</b> (de L/250 à L/500 selon l'usage), la prise en compte du <b>poids propre</b> et, pour les profilés américains, une <b>largeur minimale</b>.</p>
-<p>Le résultat affiche le <b>profilé proposé</b>, les <b>réactions</b> et <b>moments</b> aux appuis, le moment maximal, la <b>flèche maximale</b> et sa position, ainsi que le poids de la poutre. Vous pouvez l'exporter en PDF ou en image.</p>
-<div class="exemple"><b>Exemple de calcul</b>Quel IPE faut-il pour une poutre de 5 m sur deux appuis simples supportant une charge répartie de 1 000 kg/m ?<p class="sub">Données saisies</p><table class="dades entrada"><tr><td>Appuis et charge</td><td class="val">Appui–appui, charge répartie</td></tr><tr><td>Charge q</td><td class="val">1 000 kg/m</td></tr><tr><td>Longueur L</td><td class="val">5 m</td></tr><tr><td>Nuance d'acier</td><td class="val">S275JR · 275 N/mm² = 2 804 kg/cm²</td></tr><tr><td>Coef. de majoration</td><td class="val">1,50</td></tr><tr><td>Flèche maximale</td><td class="val">L/400 = 1,25 cm</td></tr><tr><td>Poids propre</td><td class="val">Oui</td></tr></table><p class="sub">Détail du calcul <span class="etq">Pro</span></p><ol class="proces"><li>Moment des charges : M = q·L²/8 = 3 125 kg·m ; majoré ×1,50 = 4 687,5 kg·m.</li><li>Prédimensionnement : W<sub>x</sub> ≥ M / σ<sub>adm</sub> = 468 750 / 2 804 = 167,2 cm³ ⇒ IPE 200 (W<sub>x</sub> = 194 cm³).</li><li>Contraintes avec le poids propre : σ = 2 452 &lt; 2 804 kg/cm² ✅ · cisaillement τ = 427 &lt; 1 619 kg/cm² ✅</li><li>Flèche : IPE 200 → 2,04 cm ❌ · IPE 220 → 1,44 cm ❌ · IPE 240 → 1,03 cm ✅</li></ol><p class="sub">Résultats</p><div class="xifres res"><div class=destacat><small>Profilé calculé</small><span>IPE 240</span></div><div><small>Réaction en A</small><span>3 827 kg</span></div><div><small>Réaction en B</small><span>3 827 kg</span></div><div><small>Moment maximal</small><span>4 783 kg·m</span><small>x = 2,50 m</small></div><div><small>Moment en A et B</small><span>0</span></div><div><small>Flèche maximale</small><span>1,03 cm</span><small>x = 2,50 m</small></div><div><small>Poids du profilé</small><span>30,7 kg/m</span><small>5 m → 153,5 kg</small></div><div><small>Contrainte maximale</small><span>1 476 kg/cm²</span><small>&lt; 2 804 kg/cm²</small></div></div><figure class="figdiag"><svg class="diag" viewBox="0 0 640 430" role="img" aria-label="Représentation des résultats : charges et réactions, diagramme des moments fléchissants et déformée (exagérée)."><text class="eti" x="8" y="20">Charges et réactions</text><text class="acc-t" x="550" y="44" text-anchor="end">q = 1 000 kg/m</text><line class="acc" x1="90" y1="56" x2="550" y2="56"/><line class="acc" x1="90.0" y1="56" x2="90.0" y2="76"/><polygon class="acc-f" points="86.0,74 94.0,74 90.0,82"/><line class="acc" x1="128.3" y1="56" x2="128.3" y2="76"/><polygon class="acc-f" points="124.3,74 132.3,74 128.3,82"/><line class="acc" x1="166.7" y1="56" x2="166.7" y2="76"/><polygon class="acc-f" points="162.7,74 170.7,74 166.7,82"/><line class="acc" x1="205.0" y1="56" x2="205.0" y2="76"/><polygon class="acc-f" points="201.0,74 209.0,74 205.0,82"/><line class="acc" x1="243.3" y1="56" x2="243.3" y2="76"/><polygon class="acc-f" points="239.3,74 247.3,74 243.3,82"/><line class="acc" x1="281.7" y1="56" x2="281.7" y2="76"/><polygon class="acc-f" points="277.7,74 285.7,74 281.7,82"/><line class="acc" x1="320.0" y1="56" x2="320.0" y2="76"/><polygon class="acc-f" points="316.0,74 324.0,74 320.0,82"/><line class="acc" x1="358.3" y1="56" x2="358.3" y2="76"/><polygon class="acc-f" points="354.3,74 362.3,74 358.3,82"/><line class="acc" x1="396.7" y1="56" x2="396.7" y2="76"/><polygon class="acc-f" points="392.7,74 400.7,74 396.7,82"/><line class="acc" x1="435.0" y1="56" x2="435.0" y2="76"/><polygon class="acc-f" points="431.0,74 439.0,74 435.0,82"/><line class="acc" x1="473.3" y1="56" x2="473.3" y2="76"/><polygon class="acc-f" points="469.3,74 477.3,74 473.3,82"/><line class="acc" x1="511.7" y1="56" x2="511.7" y2="76"/><polygon class="acc-f" points="507.7,74 515.7,74 511.7,82"/><line class="acc" x1="550.0" y1="56" x2="550.0" y2="76"/><polygon class="acc-f" points="546.0,74 554.0,74 550.0,82"/><rect class="biga" x="90" y="84" width="460" height="10" rx="2"/><polygon class="sup" points="90,94 78,114 102,114"/><line class="rea" x1="90" y1="158" x2="90" y2="124"/><polygon class="rea-f" points="84,128 96,128 90,118"/><polygon class="sup" points="550,94 538,114 562,114"/><line class="rea" x1="550" y1="158" x2="550" y2="124"/><polygon class="rea-f" points="544,128 556,128 550,118"/><text x="104" y="152">R<tspan class="idx" dy="4">A</tspan><tspan dy="-4"> = 3 827 kg</tspan></text><text x="536" y="152" text-anchor="end">R<tspan class="idx" dy="4">B</tspan><tspan dy="-4"> = 3 827 kg</tspan></text><text class="sec" x="320.0" y="122" text-anchor="middle">L = 5 m · IPE 240</text><text class="eti" x="8" y="190">Moments fléchissants</text><path class="mom" d="M90,205 Q320.0,355 550,205 Z"/><line class="base" x1="90" y1="205" x2="550" y2="205"/><line class="guia" x1="320.0" y1="205" x2="320.0" y2="280"/><text x="320.0" y="305" text-anchor="middle">M<tspan class="idx" dy="4">max</tspan><tspan dy="-4"> = 4 783 kg·m</tspan></text><text class="eti" x="8" y="330">Déformée</text><line class="guia" x1="90" y1="350" x2="550" y2="350"/><path class="def" d="M90,350 C240,402 400,402 550,350"/><polygon class="sup" points="90,350 81,365 99,365"/><polygon class="sup" points="550,350 541,365 559,365"/><line class="acc" x1="320.0" y1="350" x2="320.0" y2="389"/><text x="320.0" y="418" text-anchor="middle">f = 1,03 cm  (x = 2,50 m)  ≤ 1,25 cm</text></svg><figcaption>Représentation des résultats : charges et réactions, diagramme des moments fléchissants et déformée (exagérée).</figcaption></figure><p class="nota">Ici, c'est la flèche qui décide : un IPE 200 résisterait, mais il se déformerait trop.</p></div>
-</div>
-
-<h2>Détail du calcul et formules <span class="etq">Pro</span></h2>
-<div class="card">
-<p>Consultez le <b>calcul pas à pas</b> (prédimensionnement, vérification des contraintes et de la flèche) et <b>les formules</b> des moments, réactions et flèches pour chaque cas de charge, avec les unités d'entrée et de sortie, en métrique et en impérial.</p>
-</div>
-
-<h2>Gratuite et achats</h2>
-<div class="card">
-<p>L'app est gratuite, avec publicité. Le catalogue et les fiches sont complets sans rien acheter, et le dimensionneur inclut 20 calculs d'essai.</p>
-<ul>
-<li><b>Dimensionneur de poutres illimité</b> : calculs illimités, détail du calcul, toutes les formules et sans publicité.</li>
-<li><b>Supprimer la publicité</b> : retire les annonces.</li>
-</ul>
-<p>Vous pouvez restaurer vos achats depuis l'app. Disponible en catalan, espagnol, anglais, français, allemand et italien ; elle mémorise vos réglages par région (acier, coefficients, unités et dernières valeurs utilisées).</p>
-</div>
-
-<p class="peu"><a href="privacitat.html#fr">Politique de confidentialité</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+<p class="peu">Contact: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
 </section>
-
-<!-- ===================== DEUTSCH ===================== -->
 <section class="llengua" id="de" lang="de">
-<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Perfiles-Symbol"><div><h1>Perfiles</h1><p class="meta">Alviltol · iPhone und iPad</p></div></header>
-<div class="card">
-<p>Eine Stahlbau-Profiltabelle für die Hosentasche: Gewichte, Abmessungen und Querschnittswerte europäischer und amerikanischer Profile sowie eine Trägerbemessung, die das passende Profil für eine gegebene Last und Spannweite vorschlägt.</p>
-<a class="boto" href="https://apps.apple.com/app/id567765832">Im App Store laden</a>
+<h1>Apps</h1>
+<p class="intro">Technische Apps für Ingenieurwesen und Bauwesen.</p>
+<div class="apps">
+<div class="card app"><img src="perfiles/img/icona.png" width="72" height="72" alt="Perfiles"><div>
+<h3>Perfiles</h3><p class="meta">iPhone und iPad</p>
+<p>Stahlprofil-Tabellenbuch: Gewichte, Abmessungen und Querschnittswerte europäischer und amerikanischer Profile sowie Trägerbemessung.</p>
+<div class="enllacos"><a class="boto" href="https://apps.apple.com/app/id567765832">Im App Store laden</a><a href="perfiles/#de">Mehr erfahren</a><a href="perfiles/privacitat.html#de">Datenschutz</a></div>
+</div></div>
+<div class="card app"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"><div>
+<h3>ArmaTec</h3><p class="meta">Android</p>
+<p>Stahlbeton-Tabellenbuch: Bewehrungsstäbe, Querschnitte und Abstände, Betondeckung und Verankerung nach dem spanischen Tragwerkscode sowie Rechner für die Baustelle. Verfügbar auf Katalanisch, Spanisch und Englisch.</p>
+<div class="enllacos"><a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Jetzt bei Google Play</a><a href="armatec/#en">Mehr erfahren</a><a href="armatec/privacitat.html#en">Datenschutz</a></div>
+</div></div>
 </div>
-
-<h2>Profilkatalog</h2>
-<div class="card">
-<p>Wählen Sie die Region (Europa oder USA) und blättern Sie durch drei Gruppen:</p>
-<div class="families"><figure><img src="img/estructurals.png" width="300" height="225" alt="" loading="lazy"><figcaption>Baustahlprofile</figcaption></figure><figure><img src="img/comercials.png" width="300" height="225" alt="" loading="lazy"><figcaption>Stabstahl</figcaption></figure><figure><img src="img/tubulars.png" width="300" height="225" alt="" loading="lazy"><figcaption>Hohlprofile</figcaption></figure></div>
-<ul>
-<li><b>Baustahlprofile</b> — Europa: HEA, HEB, HEM, IPE, IPN, UPN. USA: W, S, M, HP, C, MC.</li>
-<li><b>Stabstahl</b> — Winkel L und LD, T, Flachstahl, Rund-, Vierkant- und Rechteckvollstahl; in den USA auch WT, MT und ST.</li>
-<li><b>Hohlprofile</b> — Rund-, Quadrat-, Rechteck- und Ovalrohre; in den USA runde und rechteckige HSS sowie PIPE.</li>
-</ul>
-<p>Mit der Suche finden Sie ein Profil über seinen Namen (z. B. zeigt „HEB 2“ HEB 200, HEB 220 …).</p>
-</div>
-
-<h2>Profilblatt</h2>
-<div class="card">
-<p>Jedes Profil hat ein Datenblatt mit bemaßter Zeichnung und allen Werten in Gruppen:</p>
-<ul>
-<li><b>Gewicht</b> pro Meter (berechnet mit einer Dichte von 7.850 kg/m³).</li>
-<li><b>Abmessungen</b>: Höhe, Breite, Steg- und Flanschdicke, Radien …</li>
-<li><b>Querschnittswerte</b>: Fläche, statisches Moment, Trägheitsmomente, Widerstandsmomente, Trägheitsradien und Torsionsträgheitsmoment.</li>
-<li><b>Schwerpunktlage</b> bei unsymmetrischen Profilen (L, T, UPN …).</li>
-<li><b>Lochbilder</b>: Abstand der Lochachsen und maximaler Lochdurchmesser in den Flanschen.</li>
-</ul>
-<p>Werte lassen sich <b>metrisch</b> oder <b>imperial</b> (Zoll, Pfund) anzeigen, und das <b>Blatt lässt sich als PDF oder Bild exportieren</b>.</p>
-<div class="exemple"><b>Beispiel</b>Öffnen Sie Baustahlprofile → HEB → HEB 200 und sehen Sie die wichtigsten Werte auf einen Blick:
-<div class="fitxa"><img class="dibuix" src="img/heb.png" width="260" height="304" alt="Bemaßte Zeichnung eines HEB-Profils" loading="lazy"><div class="xifres"><div><small>Gewicht</small><span>61,3 kg/m</span></div><div><small>h × b</small><span>200 × 200 mm</span></div><div><small>Fläche</small><span>78,1 cm²</span></div><div><small>I<sub>x</sub></small><span>5.696 cm⁴</span></div><div><small>W<sub>x</sub></small><span>570 cm³</span></div></div></div><p class="sub">Das vollständige Profilblatt, wie es die App zeigt:</p><table class="dades"><tr class="grup"><th colspan="3">Abmessungen</th></tr><tr><td class="sim">h</td><td>Nennhöhe</td><td class="val">200 mm</td></tr><tr><td class="sim">b</td><td>Flanschbreite</td><td class="val">200 mm</td></tr><tr><td class="sim">e</td><td>Stegdicke</td><td class="val">9 mm</td></tr><tr><td class="sim">e<sub>1</sub></td><td>Flanschdicke</td><td class="val">15 mm</td></tr><tr><td class="sim">r</td><td>Ausrundungsradius</td><td class="val">18 mm</td></tr><tr><td class="sim">h<sub>1</sub></td><td>Höhe des geraden Stegteils</td><td class="val">134 mm</td></tr><tr class="grup"><th colspan="3">Gewicht und Querschnitt</th></tr><tr><td class="sim">P</td><td>Gewicht pro Meter</td><td class="val">61,3 kg/m</td></tr><tr><td class="sim">A</td><td>Schnittsfläche</td><td class="val">78,1 cm²</td></tr><tr><td class="sim">u</td><td>Querschnittsumfang</td><td class="val">1.150 mm</td></tr><tr class="grup"><th colspan="3">Querschnittswerte</th></tr><tr><td class="sim">I<sub>x</sub></td><td>Trägheitsmoment des Querschnittes zur X-Achse</td><td class="val">5.696 cm⁴</td></tr><tr><td class="sim">W<sub>x</sub></td><td>Widerstandsmoment zur X-Achse</td><td class="val">570 cm³</td></tr><tr><td class="sim">S<sub>x</sub></td><td>Flächenmoment 1. Grades des halben Querschnitts zur x-Achse</td><td class="val">321 cm³</td></tr><tr><td class="sim">i<sub>x</sub></td><td>Trägheitsradius des Querschnittes zur X-Achse</td><td class="val">8,54 cm</td></tr><tr><td class="sim">I<sub>y</sub></td><td>Trägheitsmoment des Querschnittes zur Y-Achse</td><td class="val">2.003 cm⁴</td></tr><tr><td class="sim">W<sub>y</sub></td><td>Widerstandsmoment zur Y-Achse</td><td class="val">200 cm³</td></tr><tr><td class="sim">i<sub>y</sub></td><td>Trägheitsradius des Querschnittes zur Y-Achse</td><td class="val">5,07 cm</td></tr><tr><td class="sim">I<sub>t</sub></td><td>Torsionsträgheitsmoment des Querschnitts</td><td class="val">63,4 cm⁴</td></tr><tr><td class="sim">I<sub>a</sub></td><td>Wölbwiderstand des Querschnitts</td><td class="val">171.100 cm⁶</td></tr><tr class="grup"><th colspan="3">Lochbilder</th></tr><tr><td class="sim">w</td><td>Achsenabstand Löcher</td><td class="val">110 mm</td></tr><tr><td class="sim">w<sub>1</sub></td><td>Achsenabstand zwischen Loch und Rand</td><td class="val">45 mm</td></tr><tr><td class="sim">a</td><td>Lochdurchmesser</td><td class="val">25 mm</td></tr></table></div>
-</div>
-
-<h2>Trägerbemessung</h2>
-<div class="card">
-<p>Im Berechnungs-Tab sucht die App das erste Profil der gewählten Reihe, das Spannungs- und Durchbiegungsnachweis erfüllt. In drei Schritten:</p>
-<ol>
-<li><b>Profiltyp</b>: HEB, IPE, IPN … oder W, S, M, HP in den USA.</li>
-<li><b>Lagerung</b>: gelenkig–gelenkig, eingespannt–gelenkig, eingespannt–eingespannt oder Kragarm.</li>
-<li><b>Lasten</b>: mittige Einzellast, außermittige Einzellast, Streckenlast über die ganze Länge oder über einen Teilbereich (insgesamt 16 Fälle).</li>
-</ol>
-<div class="solis"><figure><img class="dibuix" src="img/Solis0-RecRecQR.png" width="428" height="236" alt="Trägerschema: Gelenkig–gelenkig" loading="lazy"><figcaption>Gelenkig–gelenkig</figcaption></figure><figure><img class="dibuix" src="img/Solis1-EmpRec1FC.png" width="428" height="236" alt="Trägerschema: Eingespannt–gelenkig" loading="lazy"><figcaption>Eingespannt–gelenkig</figcaption></figure><figure><img class="dibuix" src="img/Solis2-EmpEmp1FNC.png" width="428" height="236" alt="Trägerschema: Eingespannt–eingespannt" loading="lazy"><figcaption>Eingespannt–eingespannt</figcaption></figure><figure><img class="dibuix" src="img/Solis3-Vol1FExtrem.png" width="428" height="236" alt="Trägerschema: Kragarm" loading="lazy"><figcaption>Kragarm</figcaption></figure></div>
-<p>Über die Berechnungseinstellungen legen Sie <b>Stahlsorte</b> (S235, S275, S355 … oder A36, A572, A992 …), <b>Lastfaktor</b>, <b>zulässige Durchbiegung</b> (L/250 bis L/500 je nach Nutzung), die Berücksichtigung des <b>Eigengewichts</b> und bei US-Profilen eine <b>Mindestbreite</b> fest.</p>
-<p>Das Ergebnis zeigt das <b>vorgeschlagene Profil</b>, <b>Auflagerkräfte</b> und <b>Momente</b> an den Auflagern, das maximale Moment, die <b>maximale Durchbiegung</b> und ihre Lage sowie das Trägergewicht. Export als PDF oder Bild möglich.</p>
-<div class="exemple"><b>Rechenbeispiel</b>Welches IPE braucht ein 5 m langer, beidseitig gelenkig gelagerter Träger mit einer Streckenlast von 1.000 kg/m?<p class="sub">Eingaben</p><table class="dades entrada"><tr><td>Lagerung und Last</td><td class="val">Gelenkig–gelenkig, Streckenlast</td></tr><tr><td>Last q</td><td class="val">1.000 kg/m</td></tr><tr><td>Länge L</td><td class="val">5 m</td></tr><tr><td>Stahlsorte</td><td class="val">S275JR · 275 N/mm² = 2.804 kg/cm²</td></tr><tr><td>Lastfaktor</td><td class="val">1,50</td></tr><tr><td>Max. Durchbiegung</td><td class="val">L/400 = 1,25 cm</td></tr><tr><td>Eigengewicht</td><td class="val">Ja</td></tr></table><p class="sub">Rechenweg <span class="etq">Pro</span></p><ol class="proces"><li>Moment aus Lasten: M = q·L²/8 = 3.125 kg·m; mit Faktor ×1,50 = 4.687,5 kg·m.</li><li>Vorbemessung: W<sub>x</sub> ≥ M / σ<sub>zul</sub> = 468.750 / 2.804 = 167,2 cm³ ⇒ IPE 200 (W<sub>x</sub> = 194 cm³).</li><li>Spannungen mit Eigengewicht: σ = 2.452 &lt; 2.804 kg/cm² ✅ · Schub τ = 427 &lt; 1.619 kg/cm² ✅</li><li>Durchbiegung: IPE 200 → 2,04 cm ❌ · IPE 220 → 1,44 cm ❌ · IPE 240 → 1,03 cm ✅</li></ol><p class="sub">Ergebnisse</p><div class="xifres res"><div class=destacat><small>Berechnetes Profil</small><span>IPE 240</span></div><div><small>Auflagerkraft A</small><span>3.827 kg</span></div><div><small>Auflagerkraft B</small><span>3.827 kg</span></div><div><small>Maximales Moment</small><span>4.783 kg·m</span><small>x = 2,50 m</small></div><div><small>Moment in A und B</small><span>0</span></div><div><small>Max. Durchbiegung</small><span>1,03 cm</span><small>x = 2,50 m</small></div><div><small>Profilgewicht</small><span>30,7 kg/m</span><small>5 m → 153,5 kg</small></div><div><small>Max. Spannung</small><span>1.476 kg/cm²</span><small>&lt; 2.804 kg/cm²</small></div></div><figure class="figdiag"><svg class="diag" viewBox="0 0 640 430" role="img" aria-label="Darstellung der Ergebnisse: Lasten und Auflagerkräfte, Momentenlinie und Biegelinie (überhöht)."><text class="eti" x="8" y="20">Lasten und Auflagerkräfte</text><text class="acc-t" x="550" y="44" text-anchor="end">q = 1.000 kg/m</text><line class="acc" x1="90" y1="56" x2="550" y2="56"/><line class="acc" x1="90.0" y1="56" x2="90.0" y2="76"/><polygon class="acc-f" points="86.0,74 94.0,74 90.0,82"/><line class="acc" x1="128.3" y1="56" x2="128.3" y2="76"/><polygon class="acc-f" points="124.3,74 132.3,74 128.3,82"/><line class="acc" x1="166.7" y1="56" x2="166.7" y2="76"/><polygon class="acc-f" points="162.7,74 170.7,74 166.7,82"/><line class="acc" x1="205.0" y1="56" x2="205.0" y2="76"/><polygon class="acc-f" points="201.0,74 209.0,74 205.0,82"/><line class="acc" x1="243.3" y1="56" x2="243.3" y2="76"/><polygon class="acc-f" points="239.3,74 247.3,74 243.3,82"/><line class="acc" x1="281.7" y1="56" x2="281.7" y2="76"/><polygon class="acc-f" points="277.7,74 285.7,74 281.7,82"/><line class="acc" x1="320.0" y1="56" x2="320.0" y2="76"/><polygon class="acc-f" points="316.0,74 324.0,74 320.0,82"/><line class="acc" x1="358.3" y1="56" x2="358.3" y2="76"/><polygon class="acc-f" points="354.3,74 362.3,74 358.3,82"/><line class="acc" x1="396.7" y1="56" x2="396.7" y2="76"/><polygon class="acc-f" points="392.7,74 400.7,74 396.7,82"/><line class="acc" x1="435.0" y1="56" x2="435.0" y2="76"/><polygon class="acc-f" points="431.0,74 439.0,74 435.0,82"/><line class="acc" x1="473.3" y1="56" x2="473.3" y2="76"/><polygon class="acc-f" points="469.3,74 477.3,74 473.3,82"/><line class="acc" x1="511.7" y1="56" x2="511.7" y2="76"/><polygon class="acc-f" points="507.7,74 515.7,74 511.7,82"/><line class="acc" x1="550.0" y1="56" x2="550.0" y2="76"/><polygon class="acc-f" points="546.0,74 554.0,74 550.0,82"/><rect class="biga" x="90" y="84" width="460" height="10" rx="2"/><polygon class="sup" points="90,94 78,114 102,114"/><line class="rea" x1="90" y1="158" x2="90" y2="124"/><polygon class="rea-f" points="84,128 96,128 90,118"/><polygon class="sup" points="550,94 538,114 562,114"/><line class="rea" x1="550" y1="158" x2="550" y2="124"/><polygon class="rea-f" points="544,128 556,128 550,118"/><text x="104" y="152">R<tspan class="idx" dy="4">A</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text x="536" y="152" text-anchor="end">R<tspan class="idx" dy="4">B</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text class="sec" x="320.0" y="122" text-anchor="middle">L = 5 m · IPE 240</text><text class="eti" x="8" y="190">Biegemomente</text><path class="mom" d="M90,205 Q320.0,355 550,205 Z"/><line class="base" x1="90" y1="205" x2="550" y2="205"/><line class="guia" x1="320.0" y1="205" x2="320.0" y2="280"/><text x="320.0" y="305" text-anchor="middle">M<tspan class="idx" dy="4">max</tspan><tspan dy="-4"> = 4.783 kg·m</tspan></text><text class="eti" x="8" y="330">Biegelinie</text><line class="guia" x1="90" y1="350" x2="550" y2="350"/><path class="def" d="M90,350 C240,402 400,402 550,350"/><polygon class="sup" points="90,350 81,365 99,365"/><polygon class="sup" points="550,350 541,365 559,365"/><line class="acc" x1="320.0" y1="350" x2="320.0" y2="389"/><text x="320.0" y="418" text-anchor="middle">f = 1,03 cm  (x = 2,50 m)  ≤ 1,25 cm</text></svg><figcaption>Darstellung der Ergebnisse: Lasten und Auflagerkräfte, Momentenlinie und Biegelinie (überhöht).</figcaption></figure><p class="nota">Maßgebend ist hier die Durchbiegung: Ein IPE 200 wäre tragfähig genug, würde sich aber zu stark durchbiegen.</p></div>
-</div>
-
-<h2>Rechenweg und Formeln <span class="etq">Pro</span></h2>
-<div class="card">
-<p>Sehen Sie den <b>Rechenweg Schritt für Schritt</b> (Vorbemessung, Spannungs- und Durchbiegungsnachweis) und schlagen Sie <b>die Formeln</b> für Momente, Auflagerkräfte und Durchbiegungen aller Lastfälle nach – mit Ein- und Ausgabeeinheiten, metrisch und imperial.</p>
-</div>
-
-<h2>Kostenlos und Käufe</h2>
-<div class="card">
-<p>Die App ist kostenlos und werbefinanziert. Katalog und Profilblätter sind ohne Kauf vollständig; die Trägerbemessung enthält 20 Testberechnungen.</p>
-<ul>
-<li><b>Unbegrenzte Trägerbemessung</b>: unbegrenzte Berechnungen, Rechenweg, alle Formeln und keine Werbung.</li>
-<li><b>Werbung entfernen</b>: blendet die Anzeigen aus.</li>
-</ul>
-<p>Frühere Käufe lassen sich in der App wiederherstellen. Verfügbar auf Katalanisch, Spanisch, Englisch, Französisch, Deutsch und Italienisch; Ihre Einstellungen werden je Region gespeichert (Stahl, Faktoren, Einheiten und zuletzt verwendete Werte).</p>
-</div>
-
-<p class="peu"><a href="privacitat.html#de">Datenschutzerklärung</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+<p class="peu">Kontakt: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
 </section>
-
-<!-- ===================== ITALIANO ===================== -->
 <section class="llengua" id="it" lang="it">
-<header class="cap"><img src="img/icona.png" width="72" height="72" alt="Icona di Perfiles"><div><h1>Perfiles</h1><p class="meta">Alviltol · iPhone e iPad</p></div></header>
-<div class="card">
-<p>Un prontuario di profilati in acciaio in tasca: pesi, dimensioni e caratteristiche di sezione di profilati europei e americani, e un dimensionatore di travi che ti propone il profilo adatto a un carico e una luce dati.</p>
-<a class="boto" href="https://apps.apple.com/app/id567765832">Scaricala dall'App Store</a>
+<h1>Apps</h1>
+<p class="intro">App tecniche per l'ingegneria e l'edilizia.</p>
+<div class="apps">
+<div class="card app"><img src="perfiles/img/icona.png" width="72" height="72" alt="Perfiles"><div>
+<h3>Perfiles</h3><p class="meta">iPhone e iPad</p>
+<p>Prontuario dei profilati in acciaio: pesi, dimensioni e caratteristiche di sezione dei profilati europei e americani, e dimensionamento delle travi.</p>
+<div class="enllacos"><a class="boto" href="https://apps.apple.com/app/id567765832">Scarica su App Store</a><a href="perfiles/#it">Scopri di più</a><a href="perfiles/privacitat.html#it">Privacy</a></div>
+</div></div>
+<div class="card app"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"><div>
+<h3>ArmaTec</h3><p class="meta">Android</p>
+<p>Prontuario del calcestruzzo armato: barre d'acciaio, aree e interassi, copriferri e ancoraggi secondo il Codice strutturale spagnolo, e calcolatrici per il cantiere. Disponibile in catalano, spagnolo e inglese.</p>
+<div class="enllacos"><a class="boto" href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Disponibile su Google Play</a><a href="armatec/#en">Scopri di più</a><a href="armatec/privacitat.html#en">Privacy</a></div>
+</div></div>
 </div>
-
-<h2>Catalogo dei profilati</h2>
-<div class="card">
-<p>Scegli la regione (Europa o USA) e sfoglia tre famiglie:</p>
-<div class="families"><figure><img src="img/estructurals.png" width="300" height="225" alt="" loading="lazy"><figcaption>Strutturali</figcaption></figure><figure><img src="img/comercials.png" width="300" height="225" alt="" loading="lazy"><figcaption>Commerciali</figcaption></figure><figure><img src="img/tubulars.png" width="300" height="225" alt="" loading="lazy"><figcaption>Tubolari</figcaption></figure></div>
-<ul>
-<li><b>Strutturali</b> — Europa: HEA, HEB, HEM, IPE, IPN, UPN. USA: W, S, M, HP, C, MC.</li>
-<li><b>Commerciali</b> — angolari L e LD, T, piatti, tondi, quadri e rettangolari pieni; negli USA anche WT, MT e ST.</li>
-<li><b>Tubolari</b> — tubi tondi, quadrati, rettangolari e ovali; negli USA, HSS tondo e rettangolare e PIPE.</li>
-</ul>
-<p>Con la ricerca trovi un profilo scrivendone il nome (ad esempio «HEB 2» mostra HEB 200, HEB 220…).</p>
-</div>
-
-<h2>Scheda del profilo</h2>
-<div class="card">
-<p>Ogni profilo ha una scheda con il disegno quotato e tutti i dati raggruppati:</p>
-<ul>
-<li><b>Peso</b> al metro (calcolato con una densità di 7.850 kg/m³).</li>
-<li><b>Dimensioni</b>: altezza, base, spessori di anima e ala, raggi…</li>
-<li><b>Caratteristiche di sezione</b>: area, momento statico, momenti d'inerzia, moduli di resistenza, raggi d'inerzia e modulo di torsione.</li>
-<li><b>Posizione del baricentro</b> nei profili asimmetrici (L, T, UPN…).</li>
-<li><b>Fori</b>: interasse dei fori e diametro massimo del foro nelle ali.</li>
-</ul>
-<p>Puoi vedere i valori in <b>sistema metrico</b> o <b>imperiale</b> (pollici, libbre) ed <b>esportare la scheda in PDF o immagine</b> per condividerla o archiviarla.</p>
-<div class="exemple"><b>Esempio</b>Apri Strutturali → HEB → HEB 200 e hai i suoi dati chiave a colpo d'occhio:
-<div class="fitxa"><img class="dibuix" src="img/heb.png" width="260" height="304" alt="Disegno quotato di un profilo HEB" loading="lazy"><div class="xifres"><div><small>Peso</small><span>61,3 kg/m</span></div><div><small>h × b</small><span>200 × 200 mm</span></div><div><small>Area</small><span>78,1 cm²</span></div><div><small>I<sub>x</sub></small><span>5.696 cm⁴</span></div><div><small>W<sub>x</sub></small><span>570 cm³</span></div></div></div><p class="sub">La scheda completa, come la mostra l'app:</p><table class="dades"><tr class="grup"><th colspan="3">Dimensioni</th></tr><tr><td class="sim">h</td><td>Altezza</td><td class="val">200 mm</td></tr><tr><td class="sim">b</td><td>Base</td><td class="val">200 mm</td></tr><tr><td class="sim">e</td><td>Spessore anima</td><td class="val">9 mm</td></tr><tr><td class="sim">e<sub>1</sub></td><td>Spessore ala</td><td class="val">15 mm</td></tr><tr><td class="sim">r</td><td>Raggio della curva interna</td><td class="val">18 mm</td></tr><tr><td class="sim">h<sub>1</sub></td><td>Altezza della parte piana dell'anima</td><td class="val">134 mm</td></tr><tr class="grup"><th colspan="3">Peso e sezione</th></tr><tr><td class="sim">P</td><td>Peso al metro</td><td class="val">61,3 kg/m</td></tr><tr><td class="sim">A</td><td>Area della sezione</td><td class="val">78,1 cm²</td></tr><tr><td class="sim">u</td><td>Perimetro della sezione</td><td class="val">1.150 mm</td></tr><tr class="grup"><th colspan="3">Caratteristiche di sezione</th></tr><tr><td class="sim">I<sub>x</sub></td><td>Momento d'inerzia della sezione rispetto all'asse X</td><td class="val">5.696 cm⁴</td></tr><tr><td class="sim">W<sub>x</sub></td><td>Modulo resistente della sezione rispetto all'asse X</td><td class="val">570 cm³</td></tr><tr><td class="sim">S<sub>x</sub></td><td>Momento statico di mezza sezione rispetto all'asse X</td><td class="val">321 cm³</td></tr><tr><td class="sim">i<sub>x</sub></td><td>Raggio d'inerzia della sezione rispetto all'asse X</td><td class="val">8,54 cm</td></tr><tr><td class="sim">I<sub>y</sub></td><td>Momento d'inerzia della sezione rispetto all'asse Y</td><td class="val">2.003 cm⁴</td></tr><tr><td class="sim">W<sub>y</sub></td><td>Modulo resistente della sezione rispetto all'asse Y</td><td class="val">200 cm³</td></tr><tr><td class="sim">i<sub>y</sub></td><td>Raggio d'inerzia della sezione rispetto all'asse Y</td><td class="val">5,07 cm</td></tr><tr><td class="sim">I<sub>t</sub></td><td>Modulo di torsione della sezione</td><td class="val">63,4 cm⁴</td></tr><tr><td class="sim">I<sub>a</sub></td><td>Modulo di curvatura della sezione</td><td class="val">171.100 cm⁶</td></tr><tr class="grup"><th colspan="3">Fori</th></tr><tr><td class="sim">w</td><td>Distanza tra gli assi dei fori</td><td class="val">110 mm</td></tr><tr><td class="sim">w<sub>1</sub></td><td>Distanza dall'asse del foro all'estremità</td><td class="val">45 mm</td></tr><tr><td class="sim">a</td><td>Diametro del foro</td><td class="val">25 mm</td></tr></table></div>
-</div>
-
-<h2>Dimensionatore di travi</h2>
-<div class="card">
-<p>Nella scheda di calcolo, l'app cerca il primo profilo della serie scelta che verifica tensione e freccia. In tre passi:</p>
-<ol>
-<li><b>Tipo di profilo</b>: HEB, IPE, IPN… oppure W, S, M, HP negli USA.</li>
-<li><b>Vincoli</b>: appoggio–appoggio, incastro–appoggio, incastro–incastro o mensola.</li>
-<li><b>Carichi</b>: concentrato centrato, concentrato eccentrico, distribuito su tutta la lunghezza o distribuito su un tratto (16 casi in totale).</li>
-</ol>
-<div class="solis"><figure><img class="dibuix" src="img/Solis0-RecRecQR.png" width="428" height="236" alt="Schema della trave: Appoggio–appoggio" loading="lazy"><figcaption>Appoggio–appoggio</figcaption></figure><figure><img class="dibuix" src="img/Solis1-EmpRec1FC.png" width="428" height="236" alt="Schema della trave: Incastro–appoggio" loading="lazy"><figcaption>Incastro–appoggio</figcaption></figure><figure><img class="dibuix" src="img/Solis2-EmpEmp1FNC.png" width="428" height="236" alt="Schema della trave: Incastro–incastro" loading="lazy"><figcaption>Incastro–incastro</figcaption></figure><figure><img class="dibuix" src="img/Solis3-Vol1FExtrem.png" width="428" height="236" alt="Schema della trave: Mensola" loading="lazy"><figcaption>Mensola</figcaption></figure></div>
-<p>Con il pulsante delle impostazioni di calcolo scegli il <b>tipo di acciaio</b> (S235, S275, S355… o A36, A572, A992…), il <b>coefficiente di amplificazione</b> dei carichi, la <b>freccia ammissibile</b> (da L/250 a L/500 secondo l'uso), se considerare il <b>peso proprio</b> e, nei profili americani, una <b>larghezza minima</b>.</p>
-<p>Il risultato mostra il <b>profilo proposto</b>, le <b>reazioni</b> e i <b>momenti</b> agli appoggi, il momento massimo, la <b>freccia massima</b> e dove si verifica, e il peso della trave. Puoi esportarlo in PDF o immagine.</p>
-<div class="exemple"><b>Esempio di calcolo</b>Quale IPE serve per una trave di 5 m appoggiata alle due estremità con un carico distribuito di 1.000 kg/m?<p class="sub">Dati inseriti</p><table class="dades entrada"><tr><td>Vincoli e carico</td><td class="val">Appoggio–appoggio, carico distribuito</td></tr><tr><td>Carico q</td><td class="val">1.000 kg/m</td></tr><tr><td>Lunghezza L</td><td class="val">5 m</td></tr><tr><td>Tipo di acciaio</td><td class="val">S275JR · 275 N/mm² = 2.804 kg/cm²</td></tr><tr><td>Coeff. di amplificazione</td><td class="val">1,50</td></tr><tr><td>Freccia massima</td><td class="val">L/400 = 1,25 cm</td></tr><tr><td>Peso proprio</td><td class="val">Sì</td></tr></table><p class="sub">Procedimento di calcolo <span class="etq">Pro</span></p><ol class="proces"><li>Momento dei carichi: M = q·L²/8 = 3.125 kg·m; amplificato ×1,50 = 4.687,5 kg·m.</li><li>Predimensionamento: W<sub>x</sub> ≥ M / σ<sub>amm</sub> = 468.750 / 2.804 = 167,2 cm³ ⇒ IPE 200 (W<sub>x</sub> = 194 cm³).</li><li>Tensioni con il peso proprio: σ = 2.452 &lt; 2.804 kg/cm² ✅ · taglio τ = 427 &lt; 1.619 kg/cm² ✅</li><li>Freccia: IPE 200 → 2,04 cm ❌ · IPE 220 → 1,44 cm ❌ · IPE 240 → 1,03 cm ✅</li></ol><p class="sub">Risultati</p><div class="xifres res"><div class=destacat><small>Profilo calcolato</small><span>IPE 240</span></div><div><small>Reazione in A</small><span>3.827 kg</span></div><div><small>Reazione in B</small><span>3.827 kg</span></div><div><small>Momento massimo</small><span>4.783 kg·m</span><small>x = 2,50 m</small></div><div><small>Momento in A e B</small><span>0</span></div><div><small>Freccia massima</small><span>1,03 cm</span><small>x = 2,50 m</small></div><div><small>Peso del profilo</small><span>30,7 kg/m</span><small>5 m → 153,5 kg</small></div><div><small>Tensione massima</small><span>1.476 kg/cm²</span><small>&lt; 2.804 kg/cm²</small></div></div><figure class="figdiag"><svg class="diag" viewBox="0 0 640 430" role="img" aria-label="Rappresentazione dei risultati: carichi e reazioni, diagramma del momento flettente e deformata (esagerata)."><text class="eti" x="8" y="20">Carichi e reazioni</text><text class="acc-t" x="550" y="44" text-anchor="end">q = 1.000 kg/m</text><line class="acc" x1="90" y1="56" x2="550" y2="56"/><line class="acc" x1="90.0" y1="56" x2="90.0" y2="76"/><polygon class="acc-f" points="86.0,74 94.0,74 90.0,82"/><line class="acc" x1="128.3" y1="56" x2="128.3" y2="76"/><polygon class="acc-f" points="124.3,74 132.3,74 128.3,82"/><line class="acc" x1="166.7" y1="56" x2="166.7" y2="76"/><polygon class="acc-f" points="162.7,74 170.7,74 166.7,82"/><line class="acc" x1="205.0" y1="56" x2="205.0" y2="76"/><polygon class="acc-f" points="201.0,74 209.0,74 205.0,82"/><line class="acc" x1="243.3" y1="56" x2="243.3" y2="76"/><polygon class="acc-f" points="239.3,74 247.3,74 243.3,82"/><line class="acc" x1="281.7" y1="56" x2="281.7" y2="76"/><polygon class="acc-f" points="277.7,74 285.7,74 281.7,82"/><line class="acc" x1="320.0" y1="56" x2="320.0" y2="76"/><polygon class="acc-f" points="316.0,74 324.0,74 320.0,82"/><line class="acc" x1="358.3" y1="56" x2="358.3" y2="76"/><polygon class="acc-f" points="354.3,74 362.3,74 358.3,82"/><line class="acc" x1="396.7" y1="56" x2="396.7" y2="76"/><polygon class="acc-f" points="392.7,74 400.7,74 396.7,82"/><line class="acc" x1="435.0" y1="56" x2="435.0" y2="76"/><polygon class="acc-f" points="431.0,74 439.0,74 435.0,82"/><line class="acc" x1="473.3" y1="56" x2="473.3" y2="76"/><polygon class="acc-f" points="469.3,74 477.3,74 473.3,82"/><line class="acc" x1="511.7" y1="56" x2="511.7" y2="76"/><polygon class="acc-f" points="507.7,74 515.7,74 511.7,82"/><line class="acc" x1="550.0" y1="56" x2="550.0" y2="76"/><polygon class="acc-f" points="546.0,74 554.0,74 550.0,82"/><rect class="biga" x="90" y="84" width="460" height="10" rx="2"/><polygon class="sup" points="90,94 78,114 102,114"/><line class="rea" x1="90" y1="158" x2="90" y2="124"/><polygon class="rea-f" points="84,128 96,128 90,118"/><polygon class="sup" points="550,94 538,114 562,114"/><line class="rea" x1="550" y1="158" x2="550" y2="124"/><polygon class="rea-f" points="544,128 556,128 550,118"/><text x="104" y="152">R<tspan class="idx" dy="4">A</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text x="536" y="152" text-anchor="end">R<tspan class="idx" dy="4">B</tspan><tspan dy="-4"> = 3.827 kg</tspan></text><text class="sec" x="320.0" y="122" text-anchor="middle">L = 5 m · IPE 240</text><text class="eti" x="8" y="190">Momenti flettenti</text><path class="mom" d="M90,205 Q320.0,355 550,205 Z"/><line class="base" x1="90" y1="205" x2="550" y2="205"/><line class="guia" x1="320.0" y1="205" x2="320.0" y2="280"/><text x="320.0" y="305" text-anchor="middle">M<tspan class="idx" dy="4">max</tspan><tspan dy="-4"> = 4.783 kg·m</tspan></text><text class="eti" x="8" y="330">Deformata</text><line class="guia" x1="90" y1="350" x2="550" y2="350"/><path class="def" d="M90,350 C240,402 400,402 550,350"/><polygon class="sup" points="90,350 81,365 99,365"/><polygon class="sup" points="550,350 541,365 559,365"/><line class="acc" x1="320.0" y1="350" x2="320.0" y2="389"/><text x="320.0" y="418" text-anchor="middle">f = 1,03 cm  (x = 2,50 m)  ≤ 1,25 cm</text></svg><figcaption>Rappresentazione dei risultati: carichi e reazioni, diagramma del momento flettente e deformata (esagerata).</figcaption></figure><p class="nota">Qui decide la freccia: per resistenza basterebbe un IPE 200, ma si deformerebbe troppo.</p></div>
-</div>
-
-<h2>Procedimento di calcolo e formule <span class="etq">Pro</span></h2>
-<div class="card">
-<p>Puoi vedere il <b>calcolo passo per passo</b> (predimensionamento, verifica delle tensioni e della freccia) e consultare <b>le formule</b> di momenti, reazioni e frecce per ogni caso di carico, con le unità di ingresso e di uscita, in metrico e imperiale.</p>
-</div>
-
-<h2>Gratuita e acquisti</h2>
-<div class="card">
-<p>L'app è gratuita, con pubblicità. Il catalogo e le schede sono completi senza acquistare nulla, e il dimensionatore include 20 calcoli di prova.</p>
-<ul>
-<li><b>Dimensionatore di travi illimitato</b>: calcoli illimitati, procedimento di calcolo, tutte le formule e senza pubblicità.</li>
-<li><b>Rimuovi pubblicità</b>: elimina gli annunci.</li>
-</ul>
-<p>Puoi ripristinare gli acquisti precedenti dall'app. Disponibile in catalano, spagnolo, inglese, francese, tedesco e italiano; ricorda le tue impostazioni per regione (acciaio, coefficienti, unità e ultimi valori usati).</p>
-</div>
-
-<p class="peu"><a href="privacitat.html#it">Informativa sulla privacy</a> · <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
+<p class="peu">Contatti: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
 </section>
 
 <script>
