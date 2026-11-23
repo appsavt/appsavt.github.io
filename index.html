@@ -35,6 +35,16 @@ section.llengua{margin-bottom:48px}
 .app p{margin:0 0 10px}
 .enllacos{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin-top:12px}
 .enllacos .boto{margin-top:0}
+.tester{margin-top:12px}
+.tester>summary{list-style:none;cursor:pointer;display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:12px 20px;border-radius:12px}
+.tester>summary::-webkit-details-marker{display:none}
+.tester>summary::after{content:" ▾"}
+.tester[open]>summary::after{content:" ▴"}
+.tester .passos{margin-top:12px;padding:14px 16px;background:var(--suau);border-radius:12px}
+.tester .passos p{margin:0 0 8px}
+.tester ol{margin:0;padding-left:22px}
+.tester li{margin:6px 0}
+.tester .nota{margin:10px 0 0;font-size:13px;color:var(--sec)}
 .proxim{display:inline-block;background:var(--suau);color:var(--accent);font-weight:600;padding:12px 20px;border-radius:12px;margin-top:0}
 .app a.titol{color:inherit;text-decoration:none}.app a.titol:hover{text-decoration:underline}
 .app a.icona{display:block;line-height:0}
@@ -57,7 +67,7 @@ section.llengua{margin-bottom:48px}
 <div class="card app"><a class="icona" href="armatec/#ca"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"></a><div>
 <h3><a class="titol" href="armatec/#ca">ArmaTec</a></h3><p class="meta">Android</p>
 <p>Prontuari de formigó armat: barres d'acer, àrees i separacions, recobriments i ancoratges segons el Código Estructural, i calculadores per a l'obra.</p>
-<div class="enllacos"><span class="proxim">Pròximament a Google Play</span><a href="armatec/#ca">Més informació</a><a href="armatec/privacitat.html#ca">Privacitat</a></div>
+<div class="enllacos"><span class="proxim">Pròximament a Google Play</span><a href="armatec/#ca">Més informació</a><a href="armatec/privacitat.html#ca">Privacitat</a></div><details class="tester"><summary>Vull ser tester</summary><div class="passos"><p>ArmaTec encara està en proves. Si tens un mòbil Android, la pots provar abans que ningú:</p><ol><li>Entra al <a href="https://groups.google.com/g/armatec">grup de testers</a> (armatec@googlegroups.com) i prem «Unir-me al grup». Fes servir el mateix compte de Google que tens al mòbil.</li><li>Des del mòbil, <a href="https://play.google.com/apps/testing/com.alviltol.armatec">accepta la invitació a la prova</a>.</li><li>Instal·la ArmaTec des de <a href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Google Play</a>. Si encara no la veus, espera uns minuts i torna-ho a provar.</li><li>Explica'ns què en penses a <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a>. Gràcies per ajudar-nos!</li></ol><p class="nota">Ara mateix Google està revisant la prova. Si algun enllaç encara no funciona, torna-ho a provar d'aquí a uns dies.</p></div></details>
 </div></div>
 </div>
 <p class="peu">Contacte: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
@@ -74,7 +84,7 @@ section.llengua{margin-bottom:48px}
 <div class="card app"><a class="icona" href="armatec/#es"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"></a><div>
 <h3><a class="titol" href="armatec/#es">ArmaTec</a></h3><p class="meta">Android</p>
 <p>Prontuario de hormigón armado: barras de acero, áreas y separaciones, recubrimientos y anclajes según el Código Estructural, y calculadoras para la obra.</p>
-<div class="enllacos"><span class="proxim">Próximamente en Google Play</span><a href="armatec/#es">Más información</a><a href="armatec/privacitat.html#es">Privacidad</a></div>
+<div class="enllacos"><span class="proxim">Próximamente en Google Play</span><a href="armatec/#es">Más información</a><a href="armatec/privacitat.html#es">Privacidad</a></div><details class="tester"><summary>Quiero ser tester</summary><div class="passos"><p>ArmaTec todavía está en pruebas. Si tienes un móvil Android, puedes probarla antes que nadie:</p><ol><li>Entra en el <a href="https://groups.google.com/g/armatec">grupo de testers</a> (armatec@googlegroups.com) y pulsa «Unirme al grupo». Usa la misma cuenta de Google que tienes en el móvil.</li><li>Desde el móvil, <a href="https://play.google.com/apps/testing/com.alviltol.armatec">acepta la invitación a la prueba</a>.</li><li>Instala ArmaTec desde <a href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Google Play</a>. Si todavía no la ves, espera unos minutos y vuelve a intentarlo.</li><li>Cuéntanos qué te parece en <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a>. ¡Gracias por ayudarnos!</li></ol><p class="nota">Ahora mismo Google está revisando la prueba. Si algún enlace todavía no funciona, vuelve a intentarlo dentro de unos días.</p></div></details>
 </div></div>
 </div>
 <p class="peu">Contacto: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
@@ -91,7 +101,7 @@ section.llengua{margin-bottom:48px}
 <div class="card app"><a class="icona" href="armatec/#en"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"></a><div>
 <h3><a class="titol" href="armatec/#en">ArmaTec</a></h3><p class="meta">Android</p>
 <p>Reinforced concrete handbook: steel rebars, areas and spacing, concrete cover and anchorage according to the Spanish Structural Code, and calculators for site work.</p>
-<div class="enllacos"><span class="proxim">Coming soon to Google Play</span><a href="armatec/#en">More information</a><a href="armatec/privacitat.html#en">Privacy</a></div>
+<div class="enllacos"><span class="proxim">Coming soon to Google Play</span><a href="armatec/#en">More information</a><a href="armatec/privacitat.html#en">Privacy</a></div><details class="tester"><summary>I want to be a tester</summary><div class="passos"><p>ArmaTec is still in testing. If you have an Android phone, you can try it before anyone else:</p><ol><li>Go to the <a href="https://groups.google.com/g/armatec">testers group</a> (armatec@googlegroups.com) and tap “Join group”. Use the same Google account you have on your phone.</li><li>On your phone, <a href="https://play.google.com/apps/testing/com.alviltol.armatec">accept the testing invitation</a>.</li><li>Install ArmaTec from <a href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Google Play</a>. If you don't see it yet, wait a few minutes and try again.</li><li>Tell us what you think at <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a>. Thanks for helping!</li></ol><p class="nota">Google is currently reviewing the test. If a link doesn't work yet, please try again in a few days.</p></div></details>
 </div></div>
 </div>
 <p class="peu">Contact: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
@@ -108,7 +118,7 @@ section.llengua{margin-bottom:48px}
 <div class="card app"><a class="icona" href="armatec/#en"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"></a><div>
 <h3><a class="titol" href="armatec/#en">ArmaTec</a></h3><p class="meta">Android</p>
 <p>Mémento du béton armé : barres d'acier, sections et espacements, enrobages et ancrages selon le Code structurel espagnol, et calculatrices pour le chantier. Disponible en catalan, espagnol et anglais.</p>
-<div class="enllacos"><span class="proxim">Bientôt sur Google Play</span><a href="armatec/#en">En savoir plus</a><a href="armatec/privacitat.html#en">Confidentialité</a></div>
+<div class="enllacos"><span class="proxim">Bientôt sur Google Play</span><a href="armatec/#en">En savoir plus</a><a href="armatec/privacitat.html#en">Confidentialité</a></div><details class="tester"><summary>Devenir testeur</summary><div class="passos"><p>ArmaTec est encore en phase de test. Si vous avez un téléphone Android, vous pouvez l'essayer avant tout le monde :</p><ol><li>Rejoignez le <a href="https://groups.google.com/g/armatec">groupe de testeurs</a> (armatec@googlegroups.com) avec « Rejoindre le groupe ». Utilisez le même compte Google que sur votre téléphone.</li><li>Depuis votre téléphone, <a href="https://play.google.com/apps/testing/com.alviltol.armatec">acceptez l'invitation au test</a>.</li><li>Installez ArmaTec depuis <a href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Google Play</a>. Si elle n'apparaît pas encore, attendez quelques minutes et réessayez.</li><li>Donnez-nous votre avis à <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a>. Merci de votre aide !</li></ol><p class="nota">Google examine actuellement le test. Si un lien ne fonctionne pas encore, réessayez dans quelques jours.</p></div></details>
 </div></div>
 </div>
 <p class="peu">Contact: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
@@ -125,7 +135,7 @@ section.llengua{margin-bottom:48px}
 <div class="card app"><a class="icona" href="armatec/#en"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"></a><div>
 <h3><a class="titol" href="armatec/#en">ArmaTec</a></h3><p class="meta">Android</p>
 <p>Stahlbeton-Tabellenbuch: Bewehrungsstäbe, Querschnitte und Abstände, Betondeckung und Verankerung nach dem spanischen Tragwerkscode sowie Rechner für die Baustelle. Verfügbar auf Katalanisch, Spanisch und Englisch.</p>
-<div class="enllacos"><span class="proxim">Demnächst bei Google Play</span><a href="armatec/#en">Mehr erfahren</a><a href="armatec/privacitat.html#en">Datenschutz</a></div>
+<div class="enllacos"><span class="proxim">Demnächst bei Google Play</span><a href="armatec/#en">Mehr erfahren</a><a href="armatec/privacitat.html#en">Datenschutz</a></div><details class="tester"><summary>Tester werden</summary><div class="passos"><p>ArmaTec befindet sich noch in der Testphase. Wenn Sie ein Android-Handy haben, können Sie die App vorab ausprobieren:</p><ol><li>Treten Sie der <a href="https://groups.google.com/g/armatec">Testergruppe</a> (armatec@googlegroups.com) über „Gruppe beitreten“ bei. Verwenden Sie dasselbe Google-Konto wie auf Ihrem Handy.</li><li><a href="https://play.google.com/apps/testing/com.alviltol.armatec">Nehmen Sie die Testeinladung</a> auf Ihrem Handy an.</li><li>Installieren Sie ArmaTec über <a href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Google Play</a>. Wenn sie noch nicht erscheint, warten Sie ein paar Minuten und versuchen Sie es erneut.</li><li>Schreiben Sie uns Ihre Meinung an <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a>. Danke für Ihre Hilfe!</li></ol><p class="nota">Google prüft den Test gerade. Falls ein Link noch nicht funktioniert, versuchen Sie es in ein paar Tagen erneut.</p></div></details>
 </div></div>
 </div>
 <p class="peu">Kontakt: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
@@ -142,7 +152,7 @@ section.llengua{margin-bottom:48px}
 <div class="card app"><a class="icona" href="armatec/#en"><img src="armatec/img/icona.png" width="72" height="72" alt="ArmaTec"></a><div>
 <h3><a class="titol" href="armatec/#en">ArmaTec</a></h3><p class="meta">Android</p>
 <p>Prontuario del calcestruzzo armato: barre d'acciaio, aree e interassi, copriferri e ancoraggi secondo il Codice strutturale spagnolo, e calcolatrici per il cantiere. Disponibile in catalano, spagnolo e inglese.</p>
-<div class="enllacos"><span class="proxim">Prossimamente su Google Play</span><a href="armatec/#en">Scopri di più</a><a href="armatec/privacitat.html#en">Privacy</a></div>
+<div class="enllacos"><span class="proxim">Prossimamente su Google Play</span><a href="armatec/#en">Scopri di più</a><a href="armatec/privacitat.html#en">Privacy</a></div><details class="tester"><summary>Voglio fare il tester</summary><div class="passos"><p>ArmaTec è ancora in fase di test. Se hai un telefono Android, puoi provarla prima di tutti:</p><ol><li>Entra nel <a href="https://groups.google.com/g/armatec">gruppo dei tester</a> (armatec@googlegroups.com) e tocca «Iscriviti al gruppo». Usa lo stesso account Google che hai sul telefono.</li><li>Dal telefono, <a href="https://play.google.com/apps/testing/com.alviltol.armatec">accetta l'invito al test</a>.</li><li>Installa ArmaTec da <a href="https://play.google.com/store/apps/details?id=com.alviltol.armatec">Google Play</a>. Se non la vedi ancora, aspetta qualche minuto e riprova.</li><li>Raccontaci cosa ne pensi a <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a>. Grazie per l'aiuto!</li></ol><p class="nota">Google sta esaminando il test. Se un link non funziona ancora, riprova tra qualche giorno.</p></div></details>
 </div></div>
 </div>
 <p class="peu">Contatti: <a href="mailto:appsavt@gmail.com">appsavt@gmail.com</a></p>
